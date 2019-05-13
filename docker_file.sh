@@ -1,10 +1,19 @@
 #!/bin/bash
 # author:Blood-elf
 
-echo "$0 is running!"
+echo "$0 is running! PID : $$"
 
+#存放 Dockerfile 父级目录，这里设置默认值
 path_docker=/home/docker
-path_file=/home/docker/sshd_ubuntu
+
+#手动指定 Dockerfile 父级目录
+if test $# -eq 1;then
+	path_docker=$1
+else
+	echo "Default folder to save Dockerfile : /home/docker !"
+fi
+
+path_file=$paht_docker/sshd_ubuntu
 dockerfile=Dockerfile
 run_sh=run.sh
 
@@ -38,6 +47,14 @@ function write_Dockerfile(){
 	echo "RUN apt-get install -y openssh-server" >> $dockerfile
 	echo "RUN mkdir -p /var/run/sshd" >> $dockerfile
 	echo "RUN mkdir -p /root/.ssh" >> $dockerfile
+	echo -e "\n\r" >> $dockerfile
+	
+	echo "#安装 net-toos 工具,是能使用 ipfonfig 、 netstat 等网络相关的命令" >> $dockerfile
+	echo "RUN apt-get install -y net-tools" >> $dockerfile
+	echo -e "\n\r" >> $dockerfile
+	
+	echo "#安装 vim 工具" >> $dockerfile
+	echo "RUN apt-get install -y vim" >> $dockerfile
 	echo -e "\n\r" >> $dockerfile
 	
 	echo "#取消pam限制" >> $dockerfile
