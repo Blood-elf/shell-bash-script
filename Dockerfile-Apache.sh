@@ -12,7 +12,7 @@ docker_root_folder=/home/docker
 if test $# -eq 1;then
 	docker_root_folder=$1
 else
-	echo "Default folder to save Dockerfile : /home/docker !"
+	echo " ****** Default folder to save Dockerfile : /home/docker ! ****** "
 fi
 
 #存放 Dockerfile 的目录
@@ -26,10 +26,6 @@ index_page=./$sample_folder/index.html
 dockerfile=Dockerfile
 run_sh=run.sh
 
-#选择脚本执行模式， 0 测试脚本，1 创建 Dockerfile及其他相关文件， 2 清空所有创建文件，用于重新创建文件
-echo "pleas input command : 0 test，1 create,2 delete"
-read command
-
 #创建 Dockerfile 文件
 function create_file(){
 	mkdir $dockerfile_parent_folder
@@ -41,7 +37,7 @@ function create_file(){
 	mkdir $sample_folder 
 	touch $index_page
 	
-	echo "Create file success!"	
+	echo " ****** Create file success! ******"	
 	return $?
 }
 
@@ -57,17 +53,19 @@ function write_Dockerfile(){
 	
 	echo "#设置环境变量，所有操作都是非交互式的" >> $dockerfile
 	echo "ENV DEBIAN_FRONTEND noninteractive" >> $dockerfile  
-	echo -e "\n\r" >> $dockerfile
+	#echo "ENV TIME_ZONE Asiz/Shanghai" >> $dockerfile
+	#echo -e "\n\r" >> $dockerfile
 	
 	echo "#安装" >> $dockerfile
-	echo "RUN apt-get install -yd tzdata && apt-get -yd install apache2 && \\" >> $dockerfile
+	#echo "RUN apt-get -yd install tzdata" >> $dockerfile
+	echo "RUN apt-get -yd install apache2 && \\" >> $dockerfile
 	echo -e "\t rm -rf /var/lib/apt/lists/* " >> $dockerfile 
 	echo -e "\n\r" >> $dockerfile
 
-	echo "#注意这里要更改系统的时区设置，因为在 Web 应用中经常会用到时区这个系统变量，默认 Ubuntu 的设置会让你的应用程序发生不可思议的效果哦" >> $dockerfile	
-	echo "RUN echo \"Asia/Shanghai\" > /etc/timezone && \\" >> $dockerfile
-	echo -e "\t dpkg-reconfigure -f noninteractive tzdata" >> $dockerfile
-	echo -e "\n\r" >> $dockerfile
+	#echo "#注意这里要更改系统的时区设置，因为在 Web 应用中经常会用到时区这个系统变量，默认 Ubuntu 的设置会让你的应用程序发生不可思议的效果哦" >> $dockerfile	
+	#echo "RUN echo \"Asia/Shanghai\" > /etc/timezone && \\" >> $dockerfile
+	#echo -e "\t dpkg-reconfigure -f noninteractive tzdata" >> $dockerfile
+	#echo -e "\n\r" >> $dockerfile
 	
 	echo "#添加用户的脚本，并设置权限，这回覆盖之前放在这个位置的脚本" >> $dockerfile
 	echo "ADD run.sh /run.sh" >> $dockerfile
@@ -76,7 +74,7 @@ function write_Dockerfile(){
 	
 	echo -e "#添加一个示例的Web站点，删掉默认安装在 apache 文件夹下面的文件，\c" >> $dockerfile
 	echo "并将用户添加的示例用软连接链接到 /var/www/html 目录下面" >> $dockerfile
-	echo "RUN mkdir -p /var/lock/apache2 && mkdir -p /app && rm -rf /var/www/html && ln -s /app /var/www/html" >> $dockerfile  
+	echo "RUN mkdir -p /var/lock/apache2 && mkdir -p /app && rm -rf /var/www/html && mkdir -p /var/www/html && ln -s /app /var/www/html" >> $dockerfile  
 	echo "COPY sample/ /app" >> $dockerfile
 	echo -e "\n\r" >> $dockerfile
 	
@@ -97,7 +95,7 @@ function write_Dockerfile(){
 	echo "WORKDIR /app" >> $dockerfile
 	echo "CMD ["/run.sh"]" >> $dockerfile
 	
-	echo "Write content to Dockerfile success !"
+	echo " ****** Write content to Dockerfile success ! ******"
 }
 
 #写入内容到 run.sh，index.html 文件中
@@ -114,16 +112,16 @@ function write_file(){
 	echo -e "\t\t<p>Hello, Docker!</p>" >> $index_page
 	echo -e "\t</body>" >> $index_page
 	echo "</html>" >> $index_page
-	echo "Write content to index.html success !"
+	echo " ****** Write content to index.html success ! ******"
 }
 
 #创建镜像
 function create_image(){
 	docker build -t apache:ubuntu .
 	if test $? -eq 0;then 
-		echo "Create apache:ubuntu image success !";
+		echo " ****** Create apache:ubuntu image success ! ******";
 	else
-		echo "Create apache:ubuntu image failed !";
+		echo " ****** Create apache:ubuntu image failed ! ******";
 		exit 1
 	fi
 	
@@ -135,13 +133,13 @@ function run_container(){
 	#判断镜像是否创建成功，这里通过创建的数量来确定，然后运行容器
 	if [ $(docker images | grep -c "apache") -eq 1 ];then 
 		docker run -d -P --name apache-server apache:ubuntu
-		echo "Inspect image file , start container ！"
+		echo " ****** Inspect image file , start container ！******"
 	else
-		echo "Can't find the image to start container , start container failed !"
+		echo " ****** Can't find the image to start container , start container failed ! ******"
 		exit 1
 	fi
 	#查看容器是否启动
-	if [ $(docker ps | grep -c "apache-server") -eq 1 ];then echo "Contain is runing !";fi
+	if [ $(docker ps | grep -c "apache-server") -eq 1 ];then echo " ****** Contain is runing ! ******";fi
 }
 
 #删除创建的文件
@@ -149,47 +147,56 @@ function delete_file(){
 	if test -d $dockerfile_parent_folder
 	then
 		rm -rf $dockerfile_parent_folder
-		echo "Delete folder success !"
+		echo "****** Delete folder success ! ****** "
 		return $?
 	else
-		echo "Folder is not exist !"
+		echo " ****** Folder is not exist ! ****** "
 		return $?
 	fi
 }
 
-#test 
-if test $command -eq 0
-then 
-	echo "Test success !"
+#选择脚本执行模式， 0 测试脚本，1 创建 Dockerfile及其他相关文件， 2 清空所有创建文件，用于重新创建文件
+echo " ****** pleas input command : 0 test，1 create,2 delete,quite <Ctrl + D> ****** "
+while read command
+do
 
-#create file	
-elif test $command -eq 1
-then
-	if test -d $docker_root_folder
+	#test 
+	if test $command -eq 0
+	then 
+		echo " ****** Test success ! ****** "
+
+	#create file	
+	elif test $command -eq 1
 	then
-		create_file
-		write_Dockerfile
-		write_file
-		create_image
-		run_container		
+		if test -d $docker_root_folder
+		then
+			create_file
+			write_Dockerfile
+			write_file
+			create_image
+			run_container		
+			echo $?
+		else
+			mkdir -p $docker_root_folder
+			echo " ****** Creat folder 'docker' success! ****** "
+			create_file
+			write_Dockerfile
+			write_file
+			create_image
+			run_container
+			echo $?
+		fi
+
+	#delete file	
+	elif test $command -eq 2
+	then
+		delete_file
 		echo $?
 	else
-		mkdir -p $docker_root_folder
-		echo "Creat folder 'docker' success!"
-		create_file
-		write_Dockerfile
-		write_file
-		create_image
-		run_container
-		echo $?
+		echo " ******Invalid command ! ****** "
+
 	fi
-
-#delete file	
-elif test $command -eq 2
-then
-	delete_file
-	echo $?
-else
-	echo "Invalid command !"
-
-fi
+	
+	echo " ****** pleas input command : 0 test，1 create,2 delete,quite <Ctrl + D> ****** "
+	
+done
