@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="test" basedir="." default="build" xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+	<!-- 普通工程的构建脚本 -->
+	<!-- 工程根目录 -->
+	<property name="project" value="." />
+
+	<!-- 工程名 -->
+	<property name="project.name" value="cmp" />
+
+	<!-- 版本 -->
+	<property name="version" value="1.4.4" />
+
+	<property name="src" value="${project}/src/main/java" />
+	<property name="test" value="${project}/src/test/java" />
+	<property name="deploy" value="${project}/target/${project.name}-${version}" />
+	<property name="deploy.class" value="${project}/target/class" />
+	<property name="deploy.lib" value="${deploy}/lib" />
+
+	<!-- 结合maven进行编译、打包、复制依赖的jar -->
+	<target name="deploy-build">
+
+		<!-- 编译工程所需的jar -->
+		<path id="compile.classpath">
+			<pathelement location="${deploy.class}" />
+			<fileset dir="${project}/lib">
+				<include name="*.jar" />
+			</fileset>
+		</path>
+
+		<!-- 编译 -->
+		<javac srcdir="${src}" source="1.6" target="1.6" destdir="${deploy.class}" encoding="UTF-8">
+			<classpath refid="compile.classpath" />
+		</javac>
+
+		<!-- 打包 -->
+				<!-- api
+				<jar jarfile="${deploy.lib}/${project.name}-api.jar" basedir="${deploy.class}">
+					<include name="com/geor/cmp/api/**" />
+					<include name="com/geor/cmp/protocol/**" />
+				</jar>
+				 -->
+
+				<!-- mq -->
+				<jar jarfile="${deploy.lib}/${project.name}-mq.jar" basedir="${deploy.class}">
+					<include name="com/geor/cmp/comm/**" />
+				</jar>
+
+				<!-- gms -->
+				<jar jarfile="${deploy.lib}/${project.name}-gms.jar" basedir="${deploy.class}">
+					<include name="com/geor/gms/**" />
+				</jar>
+
+				<!-- server -->
+				<jar jarfile="${deploy.lib}/${project.name}-server.jar" basedir="${deploy.class}">
+					<include name="com/geor/cmp/server/**" />
+					<include name="com/geor/cmp/system/**" />
+				</jar>
+
+				<!-- share
+				<jar jarfile="${deploy.lib}/${project.name}-share.jar" basedir="${deploy.class}">
+					<include name="com/geor/cmp/share/**" />
+				</jar>
+				 -->
+
+				<!-- schema -->
+				<jar jarfile="${deploy.lib}/${project.name}-schema.jar" basedir="${deploy.class}">
+					<include name="com/geor/cmp/schema/**" />
+				</jar>
+
+				<!-- index -->
+				<jar jarfile="${deploy.lib}/${project.name}-index.jar" basedir="${deploy.class}">
+					<include name="com/geor/cmp/index/**" />
+				</jar>
+
+				<!-- data -->
+				<jar jarfile="${deploy.lib}/${project.name}-data.jar" basedir="${deploy.class}">
+					<include name="com/geor/cmp/data/**" />
+				</jar>
+
+				<!-- app -->
+				<jar jarfile="${deploy.lib}/${project.name}-app.jar" basedir="${deploy.class}">
+					<include name="com/geor/cmp/app/**" />
+				</jar>
+
+				<!-- 复制依赖的jar -->
+				<copy todir="${deploy.lib}">
+					<fileset refid="maven.fileset" />
+					<mapper type="flatten" />
+				</copy>
+
+				<!-- 复制第三方jar -->
+				<copy todir="${deploy.lib}">
+					<fileset dir="${project}/lib" />
+				</copy>
+
+				<!-- 复制配置文件 -->
+				<copy todir="${deploy}">
+					<fileset dir="${project}/src/main/resources">
+						<include name="**/*" />
+					</fileset>
+				</copy>
+				
+				<!-- 复制启动文件 -->
+				<copy todir="${deploy}">
+					<fileset dir="${project}/src/main/resources/bin">
+						<include name="**/*" />
+					</fileset>
+				</copy>
+
+			</target>
+
+			<!-- 清理 -->
+			<target name="clean">
+				<delete dir="${deploy.class}" />
+				<mkdir dir="${deploy.class}" />
+			</target>
+
+			<!-- 入口 -->
+			<target name="build">
+				<antcall target="clean" />
+				<antcall target="maven-build" />
+			</target>
+
+</project>

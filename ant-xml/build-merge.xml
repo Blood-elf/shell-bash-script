@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="test" basedir="." default="build" xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+	<!-- 将maven工程合并为普通工程 -->
+	<!-- 工程根目录 -->
+	<property name="project" value="." />
+
+	<!-- 工程名 -->
+	<property name="project.name" value="cmp-server" />
+
+	<!-- 版本 -->
+	<property name="version" value="1.4.2" />
+
+	<property name="module-cmp-server" value="${project}" />
+	<property name="module-cmp-api" value="${project}/../cmp-v3-api" />
+	<property name="module-cmp-util" value="${project}/../cmp-v3-util" />
+	<property name="target" value="${project}/../${project.name}-JiangSu" />
+
+	<target name="code-build">
+
+		<artifact:pom id="cmp-server.maven.project" file="${module-cmp-server}/pom.xml" />
+		<artifact:dependencies pathId="maven.classpath" filesetid="cmp-server.maven.fileset">
+			<localrepository path="E:/.m2/repository" />
+			<pom refid="cmp-server.maven.project" />
+		</artifact:dependencies>
+
+		<artifact:pom id="cmp-api.maven.project" file="${module-cmp-api}/pom.xml" />
+		<artifact:dependencies pathId="maven.classpath" filesetid="cmp-api.maven.fileset">
+			<localrepository path="E:/.m2/repository" />
+			<pom refid="cmp-api.maven.project" />
+		</artifact:dependencies>
+
+		<artifact:pom id="cmp-util.maven.project" file="${module-cmp-util}/pom.xml" />
+		<artifact:dependencies pathId="maven.classpath" filesetid="cmp-util.maven.fileset">
+			<localrepository path="E:/.m2/repository" />
+			<pom refid="cmp-util.maven.project" />
+		</artifact:dependencies>
+
+		<!-- 复制cmp-server依赖的jar -->
+		<copy todir="${target}/lib">
+			<fileset refid="cmp-server.maven.fileset" />
+			<mapper type="flatten" />
+		</copy>
+
+		<!-- 复制cmp-util依赖的jar -->
+		<copy todir="${target}/lib">
+			<fileset refid="cmp-util.maven.fileset" />
+			<mapper type="flatten" />
+		</copy>
+		
+		<!-- 复制第三方jar -->
+		<copy todir="${target}/lib">
+			<fileset dir="${module-cmp-server}/lib" >
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+
+		<!-- 删除不必要的jar -->
+		<delete dir="${target}/lib">
+			<include name="lucene*" />
+			<include name="log4j*" />
+			<include name="junit*" />
+			<include name="cmp-v3-api*" />
+			<include name="cmp-v3-util*" />
+		</delete>
+
+		<!-- 复制各模块代码 -->
+		<copy todir="${target}/src/main/java">
+			<fileset dir="${module-cmp-api}/src/main/java" />
+			<fileset dir="${module-cmp-util}/src/main/java" />
+			<fileset dir="${module-cmp-server}/src/main/java" />
+		</copy>
+
+
+		<!-- 复制资源文件 -->
+		<copy todir="${target}/src/main/resources">
+			<fileset dir="${module-cmp-server}/src/main/resources">
+				<include name="bin/*"/>
+				<include name="config/*"/>
+			</fileset>
+		</copy>
+
+
+		<!-- 复制构建脚本 -->
+		<copy todir="${target}">
+			<fileset dir="${module-cmp-server}">
+				<include name="build.xml" />
+			</fileset>
+		</copy>
+
+
+	</target>
+
+	<!-- 准备 -->
+	<target name="init">
+		<!--
+		<delete dir="${target}" />
+		-->
+		<mkdir dir="${target}" />
+		<mkdir dir="${target}/src" />
+		<mkdir dir="${target}/lib" />
+	</target>
+
+	<!-- 入口 -->
+	<target name="build">
+		<antcall target="init" />
+		<antcall target="code-build" />
+	</target>
+
+</project>
