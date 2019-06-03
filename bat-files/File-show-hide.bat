@@ -1,4 +1,6 @@
 @echo off
+color 0d
+title $***blood-elf***$
 
 cd /d E:\迅雷下载
 

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="cboms" basedir="." default="build" xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+	<!-- 将maven工程合并为普通工程 -->
+	<!-- 工程根目录 -->
+	<property name="project" value="." />
+
+	<!-- 工程名 -->
+	<property name="project.name" value="ecmp-web-JiangSu1" />
+	<!--
+	<property name="project.name" value="jsnx-ecmp" />
+	-->
+
+	<!-- 版本 -->
+	<property name="version" value="1.4.2" />
+
+	<!-- 定义 代码源目录 -->
+	<property name="ecmp-web" value="${project}" />
+	<property name="module-cboms-archive" value="${project}/../cboms-archive" />
+	<property name="module-cboms-core" value="${project}/../cboms-core" />
+	<property name="module-cboms-da" value="${project}/../cboms-da" />
+	<property name="module-cboms-datadeal" value="${project}/../cboms-datadeal" />
+	<property name="module-cboms-ecm" value="${project}/../cboms-ecm" />
+	<property name="module-cboms-form" value="${project}/../cboms-form" />
+	<property name="module-cboms-utils" value="${project}/../cboms-utils" />
+	<property name="module-cboms-workflow" value="${project}/../cboms-workflow" />
+	<property name="module-cboms-parent" value="${project}/../cboms-parent" />
+	
+	<!-- 定义 代码目标目录 -->
+	<property name="target" value="${project}/../${project.name}" />
+	<property name="target-ecmp-web" value="${target}/cboms" />
+	<property name="target-cboms-archive" value="${target}/cboms-archive" />
+	<property name="target-cboms-core" value="${target}/cboms-core" />
+	<property name="target-cboms-da" value="${target}/cboms-da" />
+	<property name="target-cboms-datadeal" value="${target}/cboms-datadeal" />
+	<property name="target-cboms-ecm" value="${target}/cboms-ecm" />
+	<property name="target-cboms-form" value="${target}/cboms-form" />
+	<property name="target-cboms-utils" value="${target}/cboms-utils" />
+	<property name="target-cboms-workflow" value="${target}/cboms-workflow" />
+	<property name="target-cboms-parent" value="${target}/cboms-parent" />
+
+	<target name="code-copy">
+		
+		<!-- 模式集合:忽略 文件夹 src/test/,.settings/,/target/, 和文件 .classpath,.project -->
+		<patternset id="project.common.excludes"  includes="**/*.*" excludes="src/test/,.settings/,/target/,.classpath,.project"/>
+
+		<!-- 复制 cboms 资源文件 -->
+		<copy todir="${target-ecmp-web}">
+			<fileset dir="${ecmp-web}"  casesensitive="yes">
+				<patternset refid="project.common.excludes" />
+				<exclude name="/build*"/>
+				<!-- 
+				<exclude name="/build/" /> 排除文件夹
+				<exclude name="/build*" /> 排除文件
+				-->
+			</fileset>
+		</copy>
+		<!-- 复制 cboms-archive 资源文件 -->
+		<copy todir="${target-cboms-archive}">
+			<fileset dir="${module-cboms-archive}"  casesensitive="yes">
+				<patternset refid="project.common.excludes" />
+			</fileset>
+		</copy>	
+		<!-- 复制 cboms-core 资源文件 -->
+		<copy todir="${target-cboms-core}">
+			<fileset dir="${module-cboms-core}"  casesensitive="yes">
+				<patternset refid="project.common.excludes" />
+			</fileset>
+		</copy>
+		<!-- 复制 cboms-da 资源文件 -->
+		<copy todir="${target-cboms-da}">
+			<fileset dir="${module-cboms-da}"  casesensitive="yes">
+				<patternset refid="project.common.excludes" />
+			</fileset>
+		</copy>
+		<!-- 复制 cboms-datadeal 资源文件 -->
+		<copy todir="${target-cboms-datadeal}">
+			<fileset dir="${module-cboms-datadeal}" casesensitive="yes">
+				<patternset refid="project.common.excludes" />
+			</fileset>
+		</copy>
+		<!-- 复制 cboms-ecm 资源文件 -->
+		<copy todir="${target-cboms-ecm}">
+			<fileset dir="${module-cboms-ecm}" casesensitive="yes">
+				<patternset refid="project.common.excludes" />
+			</fileset>
+		</copy>
+		<!-- 复制 cboms-form 资源文件 -->
+		<copy todir="${target-cboms-form}">
+			<fileset dir="${module-cboms-form}" casesensitive="yes">
+				<patternset refid="project.common.excludes" />
+			</fileset>
+		</copy>
+		<!-- 复制 cboms-utils 资源文件 -->
+		<copy todir="${target-cboms-utils}">
+			<fileset dir="${module-cboms-utils}" casesensitive="yes">
+				<patternset refid="project.common.excludes" />
+			</fileset>
+		</copy>
+		<!-- 复制 cboms-form 资源文件 -->
+		<copy todir="${target-cboms-workflow}">
+			<fileset dir="${module-cboms-workflow}" casesensitive="yes">
+				<patternset refid="project.common.excludes" />
+			</fileset>
+		</copy>
+		<!-- 复制 cboms-parent 资源文件 -->
+		<copy todir="${target-cboms-parent}">
+			<fileset dir="${module-cboms-parent}" casesensitive="yes">
+				<patternset refid="project.common.excludes" />
+			</fileset>
+		</copy>
+		
+	</target>
+
+	<!-- 准备 -->
+	<target name="init">
+		<!--
+		<delete dir="${target}" />
+		-->
+		
+		<mkdir dir="${target}" />
+		<mkdir dir="${target-ecmp-web}" />
+		<mkdir dir="${target-cboms-archive}" />
+		<mkdir dir="${target-cboms-core}" />
+		<mkdir dir="${target-cboms-da}" />
+		<mkdir dir="${target-cboms-datadeal}" />
+		<mkdir dir="${target-cboms-ecm}" />
+		<mkdir dir="${target-cboms-form}" />
+		<mkdir dir="${target-cboms-utils}" />
+		<mkdir dir="${target-cboms-workflow}" />
+		<mkdir dir="${target-cboms-parent}" />
+	</target>
+
+	<!-- 入口 -->
+	<target name="build">
+		<antcall target="init" />
+		<antcall target="code-copy" />
+	</target>
+
+</project>

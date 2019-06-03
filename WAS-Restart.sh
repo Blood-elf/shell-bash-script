@@ -53,7 +53,7 @@ function start(){
 while true
 do
 
-	echo "please choice command : 0 test,1 restart all,2 restart node"
+	echo "please choice command : 0 test,1 stop all,2 stop node,3 restart all,4 restart node"
 	read command
 
 	#测试指令
