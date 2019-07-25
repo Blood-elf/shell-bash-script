@@ -1,0 +1,10 @@
+author:wubing
+Description:
+1.在运行脚本之前，首先给所有脚本赋予可权限:chmod 775 + 脚本名称
+2.nodes配置需要监控的节点和登陆用户信息
+3.deploy.sh 一键部署nmon文件并赋权
+4.startNmon.sh 一键启动所有nmon监控(根据提示首先输入[-s] 采集频率,[-c]采集次数，[-f]生产的nmon文件名如:testnmon)
+5.downloadNmon.sh 根据nmon名称一键下载所有nmon文件到本地
+6.stopNmon.sh 一键停止所有nmon
+Suggest:
+建议把脚本放在一个Linux系统上运行

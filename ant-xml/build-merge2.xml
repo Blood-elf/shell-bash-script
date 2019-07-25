@@ -41,7 +41,11 @@
 	<target name="code-copy">
 		
 		<!-- 模式集合:忽略 文件夹 src/test/,.settings/,/target/, 和文件 .classpath,.project -->
-		<patternset id="project.common.excludes"  includes="**/*.*" excludes="src/test/,.settings/,/target/,.classpath,.project"/>
+		<patternset id="project.common.excludes"  includes="**/*.*" excludes="src/test/,.settings/,target/,.classpath,.project"/>
+		
+		<!-- Overwrite existing files even if the destination files are newer.-->
+		<copy todir="${target-ecmp-web}" overwrite="true">   
+		</copy>
 
 		<!-- 复制 cboms 资源文件 -->
 		<copy todir="${target-ecmp-web}">
@@ -51,6 +55,7 @@
 				<!-- 
 				<exclude name="/build/" /> 排除文件夹
 				<exclude name="/build*" /> 排除文件
+				<include name="*.jar" />   包含文件
 				-->
 			</fileset>
 		</copy>
