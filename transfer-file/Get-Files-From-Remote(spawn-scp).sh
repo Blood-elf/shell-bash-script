@@ -10,6 +10,8 @@ target=/home/oracle
 SysType=`uname -s`
 echo SysType:$SysType
 
+#scp -r omp@$ip:/home/omp/datas /home/oracle
+
 if test $SysType = "Linux"
 then
 	/usr/bin/expect   << EOF
