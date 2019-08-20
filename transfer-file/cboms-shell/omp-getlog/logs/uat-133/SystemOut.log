@@ -1,0 +1,637 @@
+************ Start Display Current Environment ************
+WebSphere Platform 8.5.5.8 [ND 8.5.5.8 cf081545.03][IBMJAVA7 7.0.4.1 gm1318.03] running with process name yes55suse12132Cell01\Custom02133\omp-server133 and process id 28193
+Host Operating System is Linux, version 4.4.21-69-default
+Java version = 1.7.0, Java Runtime Version = pxa6470sr4fp1ifx-20130423_02 (SR4 FP1+IV38579+IV38399+IV40208), Java Compiler = j9jit26, Java VM name = IBM J9 VM
+was.install.root = /opt/IBM/WebSphere/AppServer
+user.install.root = /opt/IBM/WebSphere/AppServer/profiles/Custom02
+Java Home = /opt/IBM/WebSphere/AppServer/java_1.7_64/jre
+ws.ext.dirs = /opt/IBM/WebSphere/AppServer/java_1.7_64/lib:/opt/IBM/WebSphere/AppServer/profiles/Custom02/classes:/opt/IBM/WebSphere/AppServer/classes:/opt/IBM/WebSphere/AppServer/lib:/opt/IBM/WebSphere/AppServer/installedChannels:/opt/IBM/WebSphere/AppServer/lib/ext:/opt/IBM/WebSphere/AppServer/web/help:/opt/IBM/WebSphere/AppServer/deploytool/itp/plugins/com.ibm.etools.ejbdeploy/runtime
+Classpath = /opt/IBM/WebSphere/AppServer/profiles/Custom02/properties:/opt/IBM/WebSphere/AppServer/properties:/opt/IBM/WebSphere/AppServer/lib/startup.jar:/opt/IBM/WebSphere/AppServer/lib/bootstrap.jar:/opt/IBM/WebSphere/AppServer/lib/jsf-nls.jar:/opt/IBM/WebSphere/AppServer/lib/lmproxy.jar:/opt/IBM/WebSphere/AppServer/lib/urlprotocols.jar:/opt/IBM/WebSphere/AppServer/deploytool/itp/batchboot.jar:/opt/IBM/WebSphere/AppServer/deploytool/itp/batch2.jar:/opt/IBM/WebSphere/AppServer/java_1.7_64/lib/tools.jar
+Java Library path = /opt/IBM/WebSphere/AppServer/lib/native/linux/x86_64/:/opt/IBM/WebSphere/AppServer/java/jre/lib/amd64/compressedrefs:/opt/IBM/WebSphere/AppServer/java/jre/lib/amd64:/opt/IBM/WebSphere/AppServer/bin:/opt/IBM/WebSphere/AppServer/nulldllsdir:/usr/lib:
+Orb Version = IBM Java ORB build orb70-20130112.01
+************* End Display Current Environment *************
+[8/20/19 19:38:10:062 CST] 0000006a WASAxis2Compo E   WSWS7007E: The omp.war application module cannot be loaded correctly because of the following error: javax.xml.ws.WebServiceException: Validation error: WebMethod annotations cannot exist on implentation when WebService.endpointInterface is set.  Implementation class: com.geor.cboms.frame.service.impl.AccessControlServiceImpl
+	at org.apache.axis2.jaxws.ExceptionFactory.createWebServiceException(ExceptionFactory.java:173)
+	at org.apache.axis2.jaxws.ExceptionFactory.makeWebServiceException(ExceptionFactory.java:70)
+	at org.apache.axis2.jaxws.ExceptionFactory.makeWebServiceException(ExceptionFactory.java:118)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.validateIntegrity(ServiceDescriptionImpl.java:1691)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.validateDBCLIntegrity(ServiceDescriptionImpl.java:1560)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.<init>(ServiceDescriptionImpl.java:356)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.<init>(ServiceDescriptionImpl.java:297)
+	at org.apache.axis2.jaxws.description.impl.DescriptionFactoryImpl.createServiceDescriptionFromDBCMap(DescriptionFactoryImpl.java:277)
+	at org.apache.axis2.jaxws.description.DescriptionFactory.createServiceDescriptionFromDBCMap(DescriptionFactory.java:524)
+	at com.ibm.ws.websvcs.deployment.WASAxis2MetaDataProcessor.processModuleMetadata(WASAxis2MetaDataProcessor.java:445)
+	at com.ibm.ws.websvcs.deployment.WASAxis2MetaDataProcessor.processApplicationMetaData(WASAxis2MetaDataProcessor.java:206)
+	at com.ibm.ws.websvcs.component.WASAxis2ComponentImpl.moduleMetaDataCreated(WASAxis2ComponentImpl.java:2373)
+	at com.ibm.ws.websvcs.component.WASAxis2ComponentImpl.metaDataCreated(WASAxis2ComponentImpl.java:1021)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.fireMetaDataCreated(MetaDataMgrImpl.java:279)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.fireMetaDataCreated(MetaDataMgrImpl.java:262)
+	at com.ibm.ws.webcontainer.metadata.WebMetaDataFactory.createMetaData(WebMetaDataFactory.java:244)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.createMetaDataFromFactories(MetaDataMgrImpl.java:228)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.createMetaData(MetaDataMgrImpl.java:411)
+	at com.ibm.ws.runtime.component.DeployedModuleImpl.start(DeployedModuleImpl.java:631)
+	at com.ibm.ws.runtime.component.DeployedApplicationImpl.start(DeployedApplicationImpl.java:971)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl.startApplication(ApplicationMgrImpl.java:776)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl$5.run(ApplicationMgrImpl.java:2195)
+	at com.ibm.ws.security.auth.ContextManagerImpl.runAs(ContextManagerImpl.java:5387)
+	at com.ibm.ws.security.auth.ContextManagerImpl.runAsSystem(ContextManagerImpl.java:5603)
+	at com.ibm.ws.security.core.SecurityContext.runAsSystem(SecurityContext.java:255)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl.start(ApplicationMgrImpl.java:2200)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.start(CompositionUnitMgrImpl.java:435)
+	at com.ibm.ws.runtime.component.CompositionUnitImpl.start(CompositionUnitImpl.java:123)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.start(CompositionUnitMgrImpl.java:378)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.access$500(CompositionUnitMgrImpl.java:126)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl$CUInitializer.run(CompositionUnitMgrImpl.java:984)
+	at com.ibm.wsspi.runtime.component.WsComponentImpl$_AsynchInitializer.run(WsComponentImpl.java:502)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1881)
+
+[8/20/19 19:38:10:093 CST] 0000006a DeployedAppli W   WSVR0206E: Module, omp.war, of application, omp_133_war.ear/deployments/omp_133_war, failed to start
+[8/20/19 19:38:10:116 CST] 0000006a ApplicationMg E   WSVR0101W: An error occurred starting, omp_133_war
+[8/20/19 19:38:10:117 CST] 0000006a ApplicationMg A   WSVR0217I: Stopping application: omp_133_war
+[8/20/19 19:38:10:157 CST] 0000006a ApplicationMg A   WSVR0220I: Application stopped: omp_133_war
+[8/20/19 19:38:10:242 CST] 0000006a FfdcProvider  W com.ibm.ws.ffdc.impl.FfdcProvider logIncident FFDC1003I: FFDC Incident emitted on /opt/IBM/WebSphere/AppServer/profiles/Custom02/logs/ffdc/omp-server133_580c3543_19.08.20_19.38.10.2235201581511177254812.txt com.ibm.ws.runtime.component.ApplicationMgrImpl 2065
+[8/20/19 19:38:10:242 CST] 0000006a CompositionUn E   WSVR0194E: Composition unit WebSphere:cuname=omp_133_war in BLA WebSphere:blaname=omp_133_war failed to start.
+[8/20/19 19:38:10:245 CST] 0000006a FfdcProvider  W com.ibm.ws.ffdc.impl.FfdcProvider logIncident FFDC1003I: FFDC Incident emitted on /opt/IBM/WebSphere/AppServer/profiles/Custom02/logs/ffdc/omp-server133_580c3543_19.08.20_19.38.10.2434906299283221488201.txt com.ibm.wsspi.runtime.component.WsComponentImpl 297
+[8/20/19 19:38:10:245 CST] 00000001 ContainerHelp E   WSVR0501E: Error creating component com.ibm.ws.runtime.component.CompositionUnitMgrImpl@a922c655
+com.ibm.ws.exception.RuntimeWarning: com.ibm.ws.exception.RuntimeError: javax.xml.ws.WebServiceException: Validation error: WebMethod annotations cannot exist on implentation when WebService.endpointInterface is set.  Implementation class: com.geor.cboms.frame.service.impl.AccessControlServiceImpl
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.startCUList(CompositionUnitMgrImpl.java:1285)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.start(CompositionUnitMgrImpl.java:274)
+	at com.ibm.ws.runtime.component.ContainerHelper.startComponents(ContainerHelper.java:540)
+	at com.ibm.ws.runtime.component.ContainerImpl.startComponents(ContainerImpl.java:627)
+	at com.ibm.ws.runtime.component.ContainerImpl.start(ContainerImpl.java:618)
+	at com.ibm.ws.runtime.component.ApplicationServerImpl.start(ApplicationServerImpl.java:252)
+	at com.ibm.ws.runtime.component.ContainerHelper.startComponents(ContainerHelper.java:540)
+	at com.ibm.ws.runtime.component.ContainerImpl.startComponents(ContainerImpl.java:627)
+	at com.ibm.ws.runtime.component.ContainerImpl.start(ContainerImpl.java:618)
+	at com.ibm.ws.runtime.component.ServerImpl.start(ServerImpl.java:540)
+	at com.ibm.ws.runtime.WsServerImpl.bootServerContainer(WsServerImpl.java:311)
+	at com.ibm.ws.runtime.WsServerImpl.start(WsServerImpl.java:224)
+	at com.ibm.ws.runtime.WsServerImpl.main(WsServerImpl.java:697)
+	at com.ibm.ws.runtime.WsServer.main(WsServer.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:88)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:55)
+	at java.lang.reflect.Method.invoke(Method.java:613)
+	at com.ibm.wsspi.bootstrap.WSLauncher.launchMain(WSLauncher.java:234)
+	at com.ibm.wsspi.bootstrap.WSLauncher.main(WSLauncher.java:96)
+	at com.ibm.wsspi.bootstrap.WSLauncher.run(WSLauncher.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:88)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:55)
+	at java.lang.reflect.Method.invoke(Method.java:613)
+	at org.eclipse.equinox.internal.app.EclipseAppContainer.callMethodWithException(EclipseAppContainer.java:587)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:198)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:88)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:55)
+	at java.lang.reflect.Method.invoke(Method.java:613)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:340)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:282)
+	at org.eclipse.core.launcher.Main.run(Main.java:981)
+	at com.ibm.wsspi.bootstrap.WSPreLauncher.launchEclipse(WSPreLauncher.java:401)
+	at com.ibm.wsspi.bootstrap.WSPreLauncher.main(WSPreLauncher.java:164)
+Caused by: com.ibm.ws.exception.RuntimeError: javax.xml.ws.WebServiceException: Validation error: WebMethod annotations cannot exist on implentation when WebService.endpointInterface is set.  Implementation class: com.geor.cboms.frame.service.impl.AccessControlServiceImpl
+	at com.ibm.ws.websvcs.component.WASAxis2ComponentImpl.metaDataCreated(WASAxis2ComponentImpl.java:1025)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.fireMetaDataCreated(MetaDataMgrImpl.java:279)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.fireMetaDataCreated(MetaDataMgrImpl.java:262)
+	at com.ibm.ws.webcontainer.metadata.WebMetaDataFactory.createMetaData(WebMetaDataFactory.java:244)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.createMetaDataFromFactories(MetaDataMgrImpl.java:228)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.createMetaData(MetaDataMgrImpl.java:411)
+	at com.ibm.ws.runtime.component.DeployedModuleImpl.start(DeployedModuleImpl.java:631)
+	at com.ibm.ws.runtime.component.DeployedApplicationImpl.start(DeployedApplicationImpl.java:971)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl.startApplication(ApplicationMgrImpl.java:776)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl$5.run(ApplicationMgrImpl.java:2195)
+	at com.ibm.ws.security.auth.ContextManagerImpl.runAs(ContextManagerImpl.java:5387)
+	at com.ibm.ws.security.auth.ContextManagerImpl.runAsSystem(ContextManagerImpl.java:5603)
+	at com.ibm.ws.security.core.SecurityContext.runAsSystem(SecurityContext.java:255)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl.start(ApplicationMgrImpl.java:2200)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.start(CompositionUnitMgrImpl.java:435)
+	at com.ibm.ws.runtime.component.CompositionUnitImpl.start(CompositionUnitImpl.java:123)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.start(CompositionUnitMgrImpl.java:378)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.access$500(CompositionUnitMgrImpl.java:126)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl$CUInitializer.run(CompositionUnitMgrImpl.java:984)
+	at com.ibm.wsspi.runtime.component.WsComponentImpl$_AsynchInitializer.run(WsComponentImpl.java:502)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1881)
+Caused by: javax.xml.ws.WebServiceException: Validation error: WebMethod annotations cannot exist on implentation when WebService.endpointInterface is set.  Implementation class: com.geor.cboms.frame.service.impl.AccessControlServiceImpl
+	at org.apache.axis2.jaxws.ExceptionFactory.createWebServiceException(ExceptionFactory.java:173)
+	at org.apache.axis2.jaxws.ExceptionFactory.makeWebServiceException(ExceptionFactory.java:70)
+	at org.apache.axis2.jaxws.ExceptionFactory.makeWebServiceException(ExceptionFactory.java:118)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.validateIntegrity(ServiceDescriptionImpl.java:1691)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.validateDBCLIntegrity(ServiceDescriptionImpl.java:1560)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.<init>(ServiceDescriptionImpl.java:356)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.<init>(ServiceDescriptionImpl.java:297)
+	at org.apache.axis2.jaxws.description.impl.DescriptionFactoryImpl.createServiceDescriptionFromDBCMap(DescriptionFactoryImpl.java:277)
+	at org.apache.axis2.jaxws.description.DescriptionFactory.createServiceDescriptionFromDBCMap(DescriptionFactory.java:524)
+	at com.ibm.ws.websvcs.deployment.WASAxis2MetaDataProcessor.processModuleMetadata(WASAxis2MetaDataProcessor.java:445)
+	at com.ibm.ws.websvcs.deployment.WASAxis2MetaDataProcessor.processApplicationMetaData(WASAxis2MetaDataProcessor.java:206)
+	at com.ibm.ws.websvcs.component.WASAxis2ComponentImpl.moduleMetaDataCreated(WASAxis2ComponentImpl.java:2373)
+	at com.ibm.ws.websvcs.component.WASAxis2ComponentImpl.metaDataCreated(WASAxis2ComponentImpl.java:1021)
+	... 20 more
+
+[8/20/19 19:38:10:255 CST] 00000001 WsmmConfigFac I   ARFM5007I: ARFM configuration for cell yes55suse12132Cell01 is { arfmManageCpu=true arfmQueueMode=cluster ARFM.Mode=Automatic ARFM.MagicNOverride=-1 ARFM.MagicNMode=false aggregationPeriod=5.0 sec ctlCycleMinLength=59.0 sec smoothingWindow=12 maxQueueLen=1000 cpuLimit=100% cpuLimitForCappedVMs=95.0% WorkProfiler.Period=1.0 min WorkProfiler.HalfLife=10.0 min WorkProfiler.AlphaSmoothingHalfLife=10.0 min UseODRs=true WorkProfiler.UseProcessCPU=true WorkProfiler.UseOverhead=false goodnessWeightThreshold=20.0 goodnessWeightFactor=20.0 rhoWeightThreshold=20.0 rhoWeightFactor=8.0 goodnessThreshold=20.0 timeoutFactor=-1.0 timeoutRelaxMinutes=5.0 stuckTension=1.0 initialNominalSrvTime=100 inactivityMinutes=5.0 borrowFactorLimit=1.0 limitBorrowingByPackedPower=false serverStatsWaitTime=2000 nomSrvTimeHalfLife=60000 ratioHalfLife=600000 dlgDspRateHalfLife=600000 msgDspRateHalfLife=300000 initialMsgDlgRatioHalfLife=600000 initialMsgDlgRatio=6.0 msgDlgRatioBadTime=300000 highMemUtilLimit=1.0 profilerSolver=null profilerCorrelationLimit=0.95 profilerCorrelationWithYLimit=0.14 profilerCyclesBetweenSaves=15 memoryOverloadProtectionControlBroadcastPeriodSec=30 memoryOverloadProtectionControlBroadcastShortPeriodSec=15 memoryMarginRatio_fromCell=null maxNonFullGcMemoryReleaseMBOverride=-1 explicitGcPeriodSecOverride=-1 gcReleasesQuicklyOverride=null gcOptimizesThroughputOverride=null memUtilUpHalflife=1000000.0 memUtilDownHalflife=0.0 limitPower=false detectTxcViolations=false detectSvcViolations=true averagingWindowInMS=180000 intervalPerIndividualCountsInMS=10000 minStdDevRatio=0.25 maxZoneFactor=0.99 rampUpFactor=0.95 initialMaxRatePerSec=3.4028235E38 storageServiceWaitTimeInMs=5000 rampUpWithoutFeedbackInMs=180000 moc6AveragingWindowInMS=50000 moc6IntervalPerIndividualCountsInMS=1000 moc6UsePersistentStorage=true usePersistentStorage=false useSlope=true fastRampUp=true closeToMaxFraction=0.5 minSlopePointRate=5.0 minSlopePointRateDiff=5.0 concurrencyDivisor=null workProfilerServerStartupDelayMillis=61440 workProfilerMinimumCPUUtilization=0.003000000026077032 minimumCPURhoMultiplier=0.75 minimumCPURhoWeight=5.0 EnableFilters=true SipCpuOverloadProtection=true HttpAdmCtlForCpuOverloadProtection=true SipAdmCtlForCpuOverloadProtection=true AutoMemoryOverloadProtection=true MemoryMarginRatio_pvt=2.0}.
+[8/20/19 19:38:10:257 CST] 00000001 WsmmConfigFac I   ARFM5007I: ARFM configuration for cell yes55suse12132Cell01 is { arfmManageCpu=true arfmQueueMode=cluster ARFM.Mode=Automatic ARFM.MagicNOverride=-1 ARFM.MagicNMode=false aggregationPeriod=5.0 sec ctlCycleMinLength=59.0 sec smoothingWindow=12 maxQueueLen=1000 cpuLimit=100% cpuLimitForCappedVMs=95.0% WorkProfiler.Period=1.0 min WorkProfiler.HalfLife=10.0 min WorkProfiler.AlphaSmoothingHalfLife=10.0 min UseODRs=true WorkProfiler.UseProcessCPU=true WorkProfiler.UseOverhead=false goodnessWeightThreshold=20.0 goodnessWeightFactor=20.0 rhoWeightThreshold=20.0 rhoWeightFactor=8.0 goodnessThreshold=20.0 timeoutFactor=-1.0 timeoutRelaxMinutes=5.0 stuckTension=1.0 initialNominalSrvTime=100 inactivityMinutes=5.0 borrowFactorLimit=1.0 limitBorrowingByPackedPower=false serverStatsWaitTime=2000 nomSrvTimeHalfLife=60000 ratioHalfLife=600000 dlgDspRateHalfLife=600000 msgDspRateHalfLife=300000 initialMsgDlgRatioHalfLife=600000 initialMsgDlgRatio=6.0 msgDlgRatioBadTime=300000 highMemUtilLimit=1.0 profilerSolver=null profilerCorrelationLimit=0.95 profilerCorrelationWithYLimit=0.14 profilerCyclesBetweenSaves=15 memoryOverloadProtectionControlBroadcastPeriodSec=30 memoryOverloadProtectionControlBroadcastShortPeriodSec=15 memoryMarginRatio_fromCell=null maxNonFullGcMemoryReleaseMBOverride=-1 explicitGcPeriodSecOverride=-1 gcReleasesQuicklyOverride=null gcOptimizesThroughputOverride=null memUtilUpHalflife=1000000.0 memUtilDownHalflife=0.0 limitPower=false detectTxcViolations=false detectSvcViolations=true averagingWindowInMS=180000 intervalPerIndividualCountsInMS=10000 minStdDevRatio=0.25 maxZoneFactor=0.99 rampUpFactor=0.95 initialMaxRatePerSec=3.4028235E38 storageServiceWaitTimeInMs=5000 rampUpWithoutFeedbackInMs=180000 moc6AveragingWindowInMS=50000 moc6IntervalPerIndividualCountsInMS=1000 moc6UsePersistentStorage=true usePersistentStorage=false useSlope=true fastRampUp=true closeToMaxFraction=0.5 minSlopePointRate=5.0 minSlopePointRateDiff=5.0 concurrencyDivisor=null workProfilerServerStartupDelayMillis=61440 workProfilerMinimumCPUUtilization=0.003000000026077032 minimumCPURhoMultiplier=0.75 minimumCPURhoWeight=5.0 EnableFilters=true SipCpuOverloadProtection=true HttpAdmCtlForCpuOverloadProtection=true SipAdmCtlForCpuOverloadProtection=true AutoMemoryOverloadProtection=true MemoryMarginRatio_pvt=2.0}.
+[8/20/19 19:38:10:263 CST] 00000001 SCPComponent  I   ARFM4084I: Autonomic memory overload protection is enabled.
+[8/20/19 19:38:10:303 CST] 00000001 WsmmConfigFac I   ARFM5007I: ARFM configuration for cell yes55suse12132Cell01 is { arfmManageCpu=true arfmQueueMode=cluster ARFM.Mode=Automatic ARFM.MagicNOverride=-1 ARFM.MagicNMode=false aggregationPeriod=5.0 sec ctlCycleMinLength=59.0 sec smoothingWindow=12 maxQueueLen=1000 cpuLimit=100% cpuLimitForCappedVMs=95.0% WorkProfiler.Period=1.0 min WorkProfiler.HalfLife=10.0 min WorkProfiler.AlphaSmoothingHalfLife=10.0 min UseODRs=true WorkProfiler.UseProcessCPU=true WorkProfiler.UseOverhead=false goodnessWeightThreshold=20.0 goodnessWeightFactor=20.0 rhoWeightThreshold=20.0 rhoWeightFactor=8.0 goodnessThreshold=20.0 timeoutFactor=-1.0 timeoutRelaxMinutes=5.0 stuckTension=1.0 initialNominalSrvTime=100 inactivityMinutes=5.0 borrowFactorLimit=1.0 limitBorrowingByPackedPower=false serverStatsWaitTime=2000 nomSrvTimeHalfLife=60000 ratioHalfLife=600000 dlgDspRateHalfLife=600000 msgDspRateHalfLife=300000 initialMsgDlgRatioHalfLife=600000 initialMsgDlgRatio=6.0 msgDlgRatioBadTime=300000 highMemUtilLimit=1.0 profilerSolver=null profilerCorrelationLimit=0.95 profilerCorrelationWithYLimit=0.14 profilerCyclesBetweenSaves=15 memoryOverloadProtectionControlBroadcastPeriodSec=30 memoryOverloadProtectionControlBroadcastShortPeriodSec=15 memoryMarginRatio_fromCell=null maxNonFullGcMemoryReleaseMBOverride=-1 explicitGcPeriodSecOverride=-1 gcReleasesQuicklyOverride=null gcOptimizesThroughputOverride=null memUtilUpHalflife=1000000.0 memUtilDownHalflife=0.0 limitPower=false detectTxcViolations=false detectSvcViolations=false averagingWindowInMS=180000 intervalPerIndividualCountsInMS=10000 minStdDevRatio=0.25 maxZoneFactor=0.99 rampUpFactor=0.95 initialMaxRatePerSec=3.4028235E38 storageServiceWaitTimeInMs=5000 rampUpWithoutFeedbackInMs=180000 moc6AveragingWindowInMS=50000 moc6IntervalPerIndividualCountsInMS=1000 moc6UsePersistentStorage=true usePersistentStorage=false useSlope=true fastRampUp=true closeToMaxFraction=0.5 minSlopePointRate=5.0 minSlopePointRateDiff=5.0 concurrencyDivisor=null workProfilerServerStartupDelayMillis=61440 workProfilerMinimumCPUUtilization=0.003000000026077032 minimumCPURhoMultiplier=0.75 minimumCPURhoWeight=5.0 EnableFilters=true SipCpuOverloadProtection=true HttpAdmCtlForCpuOverloadProtection=true SipAdmCtlForCpuOverloadProtection=true AutoMemoryOverloadProtection=true MemoryMarginRatio_pvt=2.0}.
+[8/20/19 19:38:10:326 CST] 00000001 SCPComponent  I   ARFM4082I: Initialized the SIP statistics gatherer for autonomic request flow management.
+[8/20/19 19:38:10:369 CST] 00000001 TCPChannel    I   TCPC0001I: TCP Channel TCP_1 is listening on host *  (IPv6) port 9062.
+[8/20/19 19:38:10:378 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain WCInboundAdmin.
+[8/20/19 19:38:10:380 CST] 00000001 TCPChannel    I   TCPC0001I: TCP Channel TCP_2 is listening on host *  (IPv6) port 9081.
+[8/20/19 19:38:10:382 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain WCInboundDefault.
+[8/20/19 19:38:10:387 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain HttpQueueInboundDefault.
+[8/20/19 19:38:10:397 CST] 00000001 TCPChannel    I   TCPC0001I: TCP Channel TCP_4 is listening on host *  (IPv6) port 9444.
+[8/20/19 19:38:10:405 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain HttpQueueInboundDefaultSecure.
+[8/20/19 19:38:10:408 CST] 00000001 TCPChannel    I   TCPC0001I: TCP Channel TCP_3 is listening on host *  (IPv6) port 9045.
+[8/20/19 19:38:10:409 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain WCInboundAdminSecure.
+[8/20/19 19:38:10:412 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain WCInboundDefaultSecure.
+[8/20/19 19:38:10:414 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain1.
+[8/20/19 19:38:10:415 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain2.
+[8/20/19 19:38:10:422 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain3.
+[8/20/19 19:38:10:423 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain4.
+[8/20/19 19:38:10:423 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain5.
+[8/20/19 19:38:10:424 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain6.
+[8/20/19 19:38:10:424 CST] 00000001 webcontainer  I com.ibm.ws.webcontainer.WSWebContainer startChains SRVE0323I: The Asynchronous Request Dispatcher is not enabled. Requests sent through either the HttpQueueInboundDefault or the HttpQueueInboundDefaultSecure chain might not be properly handled.
+[8/20/19 19:38:10:430 CST] 00000069 SchedulerServ I   SCHD0077I: The Scheduler Service is starting the Schedulers.
+[8/20/19 19:38:10:430 CST] 00000069 SchedulerServ I   SCHD0078I: The Scheduler Service has completed starting the Schedulers.
+[8/20/19 19:38:10:504 CST] 00000001 GridConfigura I   CWLRB5873I: The GridConfiguratorMBean was activated successfully.
+[8/20/19 19:38:10:528 CST] 00000001 BatchSensorCo I   CWLRB5904I: BatchSensorComponent starting...
+[8/20/19 19:38:10:565 CST] 00000001 BatchSensorCo I   CWLRB5905I: Successfully activated GridEndpointSensorMBean.
+[8/20/19 19:38:10:595 CST] 00000001 XDMessagePaci I   XJMS0008I: XD JMS batch size set to 1
+[8/20/19 19:38:10:597 CST] 00000001 JMSProxyRunti I   XJMS0004I: XD JMS message pacing controller successfully started.
+[8/20/19 19:38:10:606 CST] 00000001 JMSClassifySe I   XJMS0012I: XD JMS classification service started.
+[8/20/19 19:38:10:609 CST] 00000001 WsmmConfigFac I   ARFM5007I: ARFM configuration for cell yes55suse12132Cell01 is { arfmManageCpu=true arfmQueueMode=cluster ARFM.Mode=Automatic ARFM.MagicNOverride=-1 ARFM.MagicNMode=false aggregationPeriod=5.0 sec ctlCycleMinLength=59.0 sec smoothingWindow=12 maxQueueLen=1000 cpuLimit=100% cpuLimitForCappedVMs=95.0% WorkProfiler.Period=1.0 min WorkProfiler.HalfLife=10.0 min WorkProfiler.AlphaSmoothingHalfLife=10.0 min UseODRs=true WorkProfiler.UseProcessCPU=true WorkProfiler.UseOverhead=false goodnessWeightThreshold=20.0 goodnessWeightFactor=20.0 rhoWeightThreshold=20.0 rhoWeightFactor=8.0 goodnessThreshold=20.0 timeoutFactor=-1.0 timeoutRelaxMinutes=5.0 stuckTension=1.0 initialNominalSrvTime=100 inactivityMinutes=5.0 borrowFactorLimit=1.0 limitBorrowingByPackedPower=false serverStatsWaitTime=2000 nomSrvTimeHalfLife=60000 ratioHalfLife=600000 dlgDspRateHalfLife=600000 msgDspRateHalfLife=300000 initialMsgDlgRatioHalfLife=600000 initialMsgDlgRatio=6.0 msgDlgRatioBadTime=300000 highMemUtilLimit=1.0 profilerSolver=null profilerCorrelationLimit=0.95 profilerCorrelationWithYLimit=0.14 profilerCyclesBetweenSaves=15 memoryOverloadProtectionControlBroadcastPeriodSec=30 memoryOverloadProtectionControlBroadcastShortPeriodSec=15 memoryMarginRatio_fromCell=null maxNonFullGcMemoryReleaseMBOverride=-1 explicitGcPeriodSecOverride=-1 gcReleasesQuicklyOverride=null gcOptimizesThroughputOverride=null memUtilUpHalflife=1000000.0 memUtilDownHalflife=0.0 limitPower=false detectTxcViolations=false detectSvcViolations=true averagingWindowInMS=180000 intervalPerIndividualCountsInMS=10000 minStdDevRatio=0.25 maxZoneFactor=0.99 rampUpFactor=0.95 initialMaxRatePerSec=3.4028235E38 storageServiceWaitTimeInMs=5000 rampUpWithoutFeedbackInMs=180000 moc6AveragingWindowInMS=50000 moc6IntervalPerIndividualCountsInMS=1000 moc6UsePersistentStorage=true usePersistentStorage=false useSlope=true fastRampUp=true closeToMaxFraction=0.5 minSlopePointRate=5.0 minSlopePointRateDiff=5.0 concurrencyDivisor=null workProfilerServerStartupDelayMillis=61440 workProfilerMinimumCPUUtilization=0.003000000026077032 minimumCPURhoMultiplier=0.75 minimumCPURhoWeight=5.0 EnableFilters=true SipCpuOverloadProtection=true HttpAdmCtlForCpuOverloadProtection=true SipAdmCtlForCpuOverloadProtection=true AutoMemoryOverloadProtection=true}.
+[8/20/19 19:38:10:610 CST] 00000001 JMSWSMMServic I   XJMS0016I: XD JMS WSMM service started.
+[8/20/19 19:38:10:617 CST] 00000001 RMIConnectorC A   ADMC0026I: The RMI Connector is available at port 9811
+[8/20/19 19:38:10:632 CST] 00000001 JMXConnectors I   ADMC0058I: The JMX JSR160RMI connector is available at port 9811
+[8/20/19 19:38:10:648 CST] 00000001 FfdcProvider  W com.ibm.ws.ffdc.impl.FfdcProvider logIncident FFDC1003I: FFDC Incident emitted on /opt/IBM/WebSphere/AppServer/profiles/Custom02/logs/ffdc/omp-server133_fe8a06f_19.08.20_19.38.10.6476332071931037023881.txt com.ibm.ws.eba.odc.EBATreeBuilder.setInitialized 204
+[8/20/19 19:38:10:650 CST] 0000006b UserManagemen I   CWWIM6002I Received notification that the server has finished starting.
+[8/20/19 19:38:10:665 CST] 00000054 NGUtil$Server I   ASND0002I: Detected server omp-server133 started on node Custom02133
+[8/20/19 19:38:10:668 CST] 00000001 XDWsGroupMana I   ODCF8010I: Peer layer setting up.
+[8/20/19 19:38:10:694 CST] 00000001 P2PGroup      I   ODCF8020I: Peer layer starting; process=yes55suse12132Cell01\Custom02133\omp-server133; boot host=[yes55suse12132:11005, yes55suse12133:11003, yes55suse12132:11003].
+[8/20/19 19:38:10:703 CST] 00000001 SonP2PShimImp I   ODCF8030I: Peer layer started; process=yes55suse12132Cell01\Custom02133\omp-server133.
+[8/20/19 19:38:10:714 CST] 00000082 P2PGroup      I   ODCF8040I: Detected process yes55suse12132Cell01\Custom01132\nodeagent started.
+[8/20/19 19:38:10:755 CST] 00000082 P2PGroup      I   ODCF8040I: Detected process yes55suse12132Cell01\dmgr\dmgr started.
+[8/20/19 19:38:10:755 CST] 00000082 P2PGroup      I   ODCF8040I: Detected process yes55suse12132Cell01\Custom01132\omp-server132 started.
+[8/20/19 19:38:10:756 CST] 00000082 P2PGroup      I   ODCF8040I: Detected process yes55suse12132Cell01\Custom02133\nodeagent started.
+[8/20/19 19:38:12:194 CST] 00000001 WsServerImpl  A   WSVR0002I: Server omp-server133 open for e-business, problems occurred during startup
+[8/20/19 19:38:40:727 CST] 0000007f WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain IPCCOutboundChain.
+[8/20/19 19:39:24:379 CST] 00000035 DMAdapter     I com.ibm.ws.ffdc.impl.DMAdapter getAnalysisEngine FFDC1009I: Analysis Engine using data base: /opt/IBM/WebSphere/AppServer/properties/logbr/ffdc/adv/ffdcdb.xml
+[8/20/19 19:39:24:430 CST] 0000003c DiscoveryTx   W   DCSV1115W: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: Member yes55suse12132Cell01\Custom02133\nodeagent connection  was closed. Member will  be removed from view. DCS connection status is Discovery|Ptp, transmitter closed. Removing closed connection.
+[8/20/19 19:39:24:383 CST] 00000035 FfdcProvider  W com.ibm.ws.ffdc.impl.FfdcProvider logIncident FFDC1003I: FFDC Incident emitted on /opt/IBM/WebSphere/AppServer/profiles/Custom02/logs/ffdc/omp-server133_c304982e_19.08.20_19.39.24.3716849315316086432078.txt com.ibm.ws.dcs.vri.common.util.DCSDiagnosticModule.causeDump 100
+[8/20/19 19:39:24:462 CST] 00000036 VSyncAlgo1    I   DCSV2004I: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: View synchronization completed successfully. The View Identifier is (121:0.yes55suse12132Cell01\Custom01132\nodeagent). The internal details are None.
+[8/20/19 19:39:24:468 CST] 00000035 CoordinatorIm I   HMGR0228I: The Coordinator is not an Active Coordinator for core group DefaultCoreGroup. The active coordinator set is [yes55suse12132Cell01\Custom01132\nodeagent].
+[8/20/19 19:39:24:469 CST] 00000035 CoordinatorIm I   HMGR0218I: A new core group view has been installed. The core group is DefaultCoreGroup. The view identifier is (122:0.yes55suse12132Cell01\Custom01132\nodeagent). The number of members in the new view is 4.
+[8/20/19 19:39:24:469 CST] 00000035 CoreGroupMemb I   DCSV8050I: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: New view installed, identifier (122:0.yes55suse12132Cell01\Custom01132\nodeagent), view size is 4 (AV=4, CD=4, CN=4, DF=5)
+[8/20/19 19:39:24:496 CST] 00000041 ViewReceiver  I   DCSV1033I: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: Confirmed all new view members in view identifier (122:0.yes55suse12132Cell01\Custom01132\nodeagent). View channel type is View|Ptp.
+[8/20/19 19:39:24:524 CST] 0000004e Peer          I   ODCF8533I: Removed neighbor ip=66.6.55.133 udp=11003 tcp=11004 ID=35c91dc8dcafc6bc40623132632fa54518e8fcd8 version=0;cellName=yes55suse12132Cell01;bridgedCells=[];structuredGateway=true;properties={inOdc=1, epoch=1566300965236, MEMBER_STARTUP_TIME=1566300964386, memberName=yes55suse12132Cell01\Custom02133\nodeagent, MEMBER_VERSION=4}, neighbor set size is now 3.
+[8/20/19 19:39:24:524 CST] 00000082 P2PGroup      I   ODCF8041I: Detected process yes55suse12132Cell01\Custom02133\nodeagent stopped.
+[8/20/19 19:39:24:527 CST] 00000054 NGUtil$Server I   ASND0003I: Detected server nodeagent stopped on node Custom02133
+[8/20/19 19:39:24:531 CST] 0000007f MBeanDiscover W   ADMD0024W: Failed to send out the discovery message to the process: nodeagent
+[8/20/19 19:39:24:532 CST] 0000007f MulticastServ W   ADMD0024W: Failed to send out the discovery message to the process: nodeagent
+[8/20/19 19:39:24:547 CST] 00000092 FfdcProvider  W com.ibm.ws.ffdc.impl.FfdcProvider logIncident FFDC1003I: FFDC Incident emitted on /opt/IBM/WebSphere/AppServer/profiles/Custom02/logs/ffdc/omp-server133_e27cb48c_19.08.20_19.39.24.5323164382051011761648.txt com.ibm.ws.management.RoutingTable.getAllAdminClients 492
+************ Start Display Current Environment ************
+WebSphere Platform 8.5.5.8 [ND 8.5.5.8 cf081545.03][IBMJAVA7 7.0.4.1 gm1318.03] running with process name yes55suse12132Cell01\Custom02133\omp-server133 and process id 28767
+Host Operating System is Linux, version 4.4.21-69-default
+Java version = 1.7.0, Java Runtime Version = pxa6470sr4fp1ifx-20130423_02 (SR4 FP1+IV38579+IV38399+IV40208), Java Compiler = j9jit26, Java VM name = IBM J9 VM
+was.install.root = /opt/IBM/WebSphere/AppServer
+user.install.root = /opt/IBM/WebSphere/AppServer/profiles/Custom02
+Java Home = /opt/IBM/WebSphere/AppServer/java_1.7_64/jre
+ws.ext.dirs = /opt/IBM/WebSphere/AppServer/java_1.7_64/lib:/opt/IBM/WebSphere/AppServer/profiles/Custom02/classes:/opt/IBM/WebSphere/AppServer/classes:/opt/IBM/WebSphere/AppServer/lib:/opt/IBM/WebSphere/AppServer/installedChannels:/opt/IBM/WebSphere/AppServer/lib/ext:/opt/IBM/WebSphere/AppServer/web/help:/opt/IBM/WebSphere/AppServer/deploytool/itp/plugins/com.ibm.etools.ejbdeploy/runtime
+Classpath = /opt/IBM/WebSphere/AppServer/profiles/Custom02/properties:/opt/IBM/WebSphere/AppServer/properties:/opt/IBM/WebSphere/AppServer/lib/startup.jar:/opt/IBM/WebSphere/AppServer/lib/bootstrap.jar:/opt/IBM/WebSphere/AppServer/lib/jsf-nls.jar:/opt/IBM/WebSphere/AppServer/lib/lmproxy.jar:/opt/IBM/WebSphere/AppServer/lib/urlprotocols.jar:/opt/IBM/WebSphere/AppServer/deploytool/itp/batchboot.jar:/opt/IBM/WebSphere/AppServer/deploytool/itp/batch2.jar:/opt/IBM/WebSphere/AppServer/java_1.7_64/lib/tools.jar
+Java Library path = /opt/IBM/WebSphere/AppServer/lib/native/linux/x86_64/:/opt/IBM/WebSphere/AppServer/java/jre/lib/amd64/compressedrefs:/opt/IBM/WebSphere/AppServer/java/jre/lib/amd64:/opt/IBM/WebSphere/AppServer/bin:/opt/IBM/WebSphere/AppServer/nulldllsdir:/usr/lib:
+Orb Version = IBM Java ORB build orb70-20130112.01
+************* End Display Current Environment *************
+[8/20/19 19:43:12:946 CST] 00000001 ManagerAdmin  I   TRAS0017I: The startup trace state is *=info.
+[8/20/19 19:43:12:946 CST] 00000001 ManagerAdmin  I   TRAS0111I: The message IDs that are in use are deprecated
+[8/20/19 19:43:13:012 CST] 00000001 ModelMgr      I   WSVR0800I: Initializing core configuration models
+[8/20/19 19:43:13:539 CST] 00000001 ComponentMeta I   WSVR0179I: The runtime provisioning feature is disabled. All components will be started.
+[8/20/19 19:43:13:638 CST] 00000001 ProviderTrack I com.ibm.ffdc.osgi.ProviderTracker AddingService FFDC1007I: FFDC Provider Installed: com.ibm.ws.ffdc.impl.FfdcProvider@a70efb5d
+[8/20/19 19:43:13:827 CST] 00000001 AdminInitiali A   ADMN0015I: The administration service is initialized.
+[8/20/19 19:43:14:301 CST] 00000001 PluginConfigS I   PLGC0057I: The plug-in configuration service started successfully.
+[8/20/19 19:43:14:338 CST] 00000001 SSLComponentI I   CWPKI0001I: SSL service is initializing the configuration
+[8/20/19 19:43:14:345 CST] 00000001 FIPSManager   I   CWPKI0044I: FIPS security mode is : No FIPS property found. 
+[8/20/19 19:43:14:347 CST] 00000001 WSKeyStore    W   CWPKI0041W: One or more key stores are using the default password.
+[8/20/19 19:43:14:364 CST] 00000001 SSLConfigMana I   CWPKI0027I: Disabling default hostname verification for HTTPS URL connections.
+[8/20/19 19:43:14:377 CST] 00000001 SSLDiagnostic I   CWPKI0014I: The SSL component's FFDC Diagnostic Module com.ibm.ws.ssl.core.SSLDiagnosticModule registered successfully: true.
+[8/20/19 19:43:14:378 CST] 00000001 SSLComponentI I   CWPKI0002I: SSL service initialization completed successfully
+[8/20/19 19:43:14:381 CST] 00000001 DiagnosticCon I com.ibm.wsspi.rasdiag.DiagnosticConfigHome setStateCollectionSpec RASD0012I: Updating State Collection Spec from Uninitialized Value to .*:.*=0
+[8/20/19 19:43:14:398 CST] 00000001 PMIImpl       A   CWPMI1001I: PMI is enabled
+[8/20/19 19:43:14:836 CST] 00000001 ModelMgr      I   WSVR0801I: Initializing all server configuration models
+[8/20/19 19:43:15:689 CST] 00000001 XDAComponentI I   CWXDA0001I: XDA service XDAComponentImpl initialized successfully.
+[8/20/19 19:43:15:765 CST] 00000001 GAPAgentCompo I   CWLRS6000I: GAP (Grid Application Placement) Component has initialized successfully on process ManagedProcess.
+[8/20/19 19:43:15:829 CST] 00000001 SibMessage    I   [:] CWSIU0000I: Release: WAS855.SIB Level: cf081545.03
+[8/20/19 19:43:16:210 CST] 00000001 ODCFactory    I   setFactoryClass = com.ibm.ws.odc.xd.XDODCFactory
+[8/20/19 19:43:16:212 CST] 00000001 ODCConstructo I   setFactoryClass = com.ibm.ws.odc.xd.XDODCConstructor@8b8099c5
+[8/20/19 19:43:16:318 CST] 00000001 SecurityDM    I   SECJ0231I: The Security component's FFDC Diagnostic Module com.ibm.ws.security.core.SecurityDM registered successfully: true.
+[8/20/19 19:43:16:346 CST] 00000001 distSecurityC I   SECJ6004I: Security Auditing is disabled. 
+[8/20/19 19:43:16:348 CST] 00000001 distSecurityC I   SECJ0309I: Java 2 Security is disabled.
+[8/20/19 19:43:16:348 CST] 00000001 Configuration A   SECJ0215I: Successfully set JAAS login provider configuration class to com.ibm.ws.security.auth.login.Configuration.
+[8/20/19 19:43:16:369 CST] 00000001 distSecurityC I   SECJ0240I: Security service initialization completed successfully
+[8/20/19 19:43:16:827 CST] 00000001 JAASLoginConf I   SECJ0212I: WCCM JAAS configuration information successfully pushed to login provider class.
+[8/20/19 19:43:16:831 CST] 00000001 J2EEServiceMa I   ASYN0059I: Work Manager service initialized successfully.
+[8/20/19 19:43:16:861 CST] 00000001 CScopeCompone I   CSCP0002I: Compensation service is disabled.
+[8/20/19 19:43:16:928 CST] 00000001 SibMessage    I   [:] CWSID0006I: The SIB service was not enabled and will not be started.
+[8/20/19 19:43:16:929 CST] 00000001 ActivitySessi I   WACS0045I: ActivitySession service is disabled.
+[8/20/19 19:43:16:932 CST] 00000001 AppProfileCom I   ACIN0030I: Application Profiling service is disabled.
+[8/20/19 19:43:16:951 CST] 00000001 SOAPContainer I   WSWS1062I: The SOAP Container service has been initialized.
+[8/20/19 19:43:17:230 CST] 00000001 SIPQuorumComp W   CWSQ0003W: No applicable cluster found for this member. Unable to join quorum group.
+[8/20/19 19:43:17:257 CST] 00000001 SchedulerServ I   SCHD0036I: The Scheduler Service is initializing.
+[8/20/19 19:43:17:261 CST] 00000001 SchedulerServ I   SCHD0037I: The Scheduler Service has been initialized.
+[8/20/19 19:43:17:276 CST] 00000001 JPAComponentI I   CWWJP0026I: The Java Persistence API (JPA) component is initializing.
+[8/20/19 19:43:17:285 CST] 00000001 AbstractJPACo I   CWWJP0006I: The com.ibm.websphere.persistence.PersistenceProviderImpl class is loaded as the default Java Persistence API (JPA) provider.
+[8/20/19 19:43:17:285 CST] 00000001 JPAComponentI I   CWWJP0027I: The Java Persistence API (JPA) component has initialized.
+[8/20/19 19:43:17:499 CST] 00000001 ApplicationRe I ApplicationRepositoryFactory  CWSCT0405I: The application router is configured to select applications by the weight.
+[8/20/19 19:43:17:501 CST] 00000001 ApplicationRe I ApplicationRepositoryFactory  CWSCT0415I: Loading default application router, weight strategy.
+[8/20/19 19:43:17:502 CST] 00000001 DefaultApplic I DefaultApplicationRouter  CWSCT0401I: Default application router has been initialized.
+[8/20/19 19:43:17:505 CST] 00000001 WebsphereComm I WebsphereCommonLauncher  CWSCT0332I: SIP Container was launched successfully but will only be initialized when first SIP application is loaded.
+[8/20/19 19:43:17:581 CST] 00000001 StartUpServic I   STUP0008I: The Startup Beans service is disabled.
+[8/20/19 19:43:17:586 CST] 00000001 I18nService   I   I18N0010I: The Internationalization service is created on omp-server133.
+[8/20/19 19:43:17:587 CST] 00000001 I18nServiceSe I   I18N0010I: The Internationalization service is disabled on omp-server133.
+[8/20/19 19:43:17:748 CST] 00000001 WsmmConfigFac I   ARFM5007I: ARFM configuration for cell <null> is { EnableFilters=true SipCpuOverloadProtection=true HttpAdmCtlForCpuOverloadProtection=true SipAdmCtlForCpuOverloadProtection=true AutoMemoryOverloadProtection=true}.
+[8/20/19 19:43:17:787 CST] 00000001 WsmmConfigFac I   ARFM5007I: ARFM configuration for cell yes55suse12132Cell01 is { arfmManageCpu=true arfmQueueMode=cluster ARFM.Mode=Automatic ARFM.MagicNOverride=-1 ARFM.MagicNMode=false aggregationPeriod=5.0 sec ctlCycleMinLength=59.0 sec smoothingWindow=12 maxQueueLen=1000 cpuLimit=90% cpuLimitForCappedVMs=95.0% WorkProfiler.Period=1.0 min WorkProfiler.HalfLife=10.0 min WorkProfiler.AlphaSmoothingHalfLife=10.0 min UseODRs=true WorkProfiler.UseProcessCPU=true WorkProfiler.UseOverhead=false goodnessWeightThreshold=20.0 goodnessWeightFactor=20.0 rhoWeightThreshold=20.0 rhoWeightFactor=8.0 goodnessThreshold=20.0 timeoutFactor=-1.0 timeoutRelaxMinutes=5.0 stuckTension=1.0 initialNominalSrvTime=100 inactivityMinutes=5.0 borrowFactorLimit=1.0 limitBorrowingByPackedPower=false serverStatsWaitTime=2000 nomSrvTimeHalfLife=60000 ratioHalfLife=600000 dlgDspRateHalfLife=600000 msgDspRateHalfLife=300000 initialMsgDlgRatioHalfLife=600000 initialMsgDlgRatio=6.0 msgDlgRatioBadTime=300000 highMemUtilLimit=0.95 profilerSolver=null profilerCorrelationLimit=0.95 profilerCorrelationWithYLimit=0.14 profilerCyclesBetweenSaves=15 memoryOverloadProtectionControlBroadcastPeriodSec=30 memoryOverloadProtectionControlBroadcastShortPeriodSec=15 memoryMarginRatio_fromCell=null maxNonFullGcMemoryReleaseMBOverride=-1 explicitGcPeriodSecOverride=-1 gcReleasesQuicklyOverride=null gcOptimizesThroughputOverride=null memUtilUpHalflife=1000000.0 memUtilDownHalflife=0.0 limitPower=false detectTxcViolations=false detectSvcViolations=true averagingWindowInMS=180000 intervalPerIndividualCountsInMS=10000 minStdDevRatio=0.25 maxZoneFactor=0.99 rampUpFactor=0.95 initialMaxRatePerSec=3.4028235E38 storageServiceWaitTimeInMs=5000 rampUpWithoutFeedbackInMs=180000 moc6AveragingWindowInMS=50000 moc6IntervalPerIndividualCountsInMS=1000 moc6UsePersistentStorage=true usePersistentStorage=false useSlope=true fastRampUp=true closeToMaxFraction=0.5 minSlopePointRate=5.0 minSlopePointRateDiff=5.0 concurrencyDivisor=null workProfilerServerStartupDelayMillis=61440 workProfilerMinimumCPUUtilization=0.003000000026077032 minimumCPURhoMultiplier=0.75 minimumCPURhoWeight=5.0 EnableFilters=true SipCpuOverloadProtection=true HttpAdmCtlForCpuOverloadProtection=true SipAdmCtlForCpuOverloadProtection=true AutoMemoryOverloadProtection=true}.
+[8/20/19 19:43:17:851 CST] 00000001 GridConfigura I   CWLRB5871I: The GridConfigurator initialized successfully.
+[8/20/19 19:43:17:866 CST] 00000001 GridDBConfigu I   CWLRB5874I: The GridDBConfigurator initialized successfully.
+[8/20/19 19:43:17:867 CST] 00000001 BatchSensorCo I   CWLRB5902I: BatchSensorComponent initializing.
+[8/20/19 19:43:17:867 CST] 00000001 BatchSensorCo I   CWLRB5903I: BatchSensorComponent initialized successfully.
+[8/20/19 19:43:17:919 CST] 00000001 UserManagemen I   CWWIM6000I Starting bootstrap sequence for the dynamic reload manager.
+[8/20/19 19:43:17:920 CST] 00000001 UserManagemen I   CWWIM6001I Waiting for notification that the server has finished starting.
+[8/20/19 19:43:17:950 CST] 00000001 VisServiceCon I VisServiceConfigHelper getWriteInterval obj=com.ibm.ws.runtime.config.ConfigObjectImpl@deae7819[/opt/IBM/WebSphere/AppServer/profiles/Custom02/config/cells/yes55suse12132Cell01/nodes/Custom02133/servers/omp-server133/server.xml#NameServer_1565425809342]
+[8/20/19 19:43:17:950 CST] 00000001 VisServiceCon I VisServiceConfigHelper getWriteInterval obj=com.ibm.ws.runtime.config.ConfigObjectImpl@1d4d889f[/opt/IBM/WebSphere/AppServer/profiles/Custom02/config/cells/yes55suse12132Cell01/nodes/Custom02133/servers/omp-server133/server.xml#ApplicationServer_1565425809342]
+[8/20/19 19:43:17:951 CST] 00000001 VisServiceCon I VisServiceConfigHelper getWriteInterval obj2=com.ibm.ws.runtime.config.ConfigObjectImpl@1641e507[/opt/IBM/WebSphere/AppServer/profiles/Custom02/config/cells/yes55suse12132Cell01/nodes/Custom02133/servers/omp-server133/server.xml#Property_1565425809454]
+[8/20/19 19:43:18:041 CST] 00000001 SchedulerComp I   CWLRB5856I: The RUN_IN_MIXED_MODE property has a value of false.
+[8/20/19 19:43:18:097 CST] 00000001 SSLComponentI I   CWPKI0003I: SSL service is starting
+[8/20/19 19:43:18:100 CST] 00000001 SSLComponentI I   CWPKI0004I: SSL service started successfully
+[8/20/19 19:43:18:560 CST] 00000001 CoordinatorIm I   HMGR0228I: The Coordinator is not an Active Coordinator for core group DefaultCoreGroup. The active coordinator set is [].
+[8/20/19 19:43:18:772 CST] 00000001 MbuRmmAdapter I   DCSV1001I: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: Created a new transport infrastructure instance successfully. Transport type is ChannelFramework. Version information is 1.9.8.20 - 14/10/13.
+[8/20/19 19:43:18:804 CST] 00000001 DCSStackImpl  I   DCSV0005I: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: Started. Stack version information: DCSBV_WAS6_1_20060409. Stack protocol information: 51001.
+[8/20/19 19:43:18:818 CST] 00000042 ViewReceiver  I   DCSV1033I: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: Confirmed all new view members in view identifier (1:0.yes55suse12132Cell01\Custom02133\omp-server133). View channel type is View|Ptp.
+[8/20/19 19:43:18:823 CST] 00000001 TCPChannel    I   TCPC0001I: TCP Channel TCP_5 is listening on host *  (IPv6) port 9355.
+[8/20/19 19:43:18:824 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain DCS.
+[8/20/19 19:43:18:827 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain DCS-Secure.
+[8/20/19 19:43:18:827 CST] 00000001 DCSPluginImpl I   HMGR0001I: The DCS Core Stack transport has been started for core group DefaultCoreGroup. There are 5 members.
+[8/20/19 19:43:18:844 CST] 00000001 BBChoiceConfi I   CWOBB2000I: The cell's configuration calls for the use of the overlay-based implementation of the Bulletin Board.
+[8/20/19 19:43:18:862 CST] 0000003c WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain chain_0.
+[8/20/19 19:43:18:955 CST] 00000001 Peer          I   ODCF8509I: The unstructured overlay UDP Channel UDP_0 is listening on host 66.6.55.133 port 11009.
+[8/20/19 19:43:18:971 CST] 00000037 MbuRmmAdapter I   DCSV1032I: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: Connected a defined member yes55suse12132Cell01\Custom02133\nodeagent.
+[8/20/19 19:43:18:974 CST] 00000037 MbuRmmAdapter I   DCSV1032I: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: Connected a defined member yes55suse12132Cell01\Custom01132\omp-server132.
+[8/20/19 19:43:18:987 CST] 00000037 MbuRmmAdapter I   DCSV1032I: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: Connected a defined member yes55suse12132Cell01\dmgr\dmgr.
+[8/20/19 19:43:18:987 CST] 00000001 TCPChannel    I   TCPC0001I: TCP Channel sonIncomingTcpConnectorInboundChannel_SonIncomingTCPSubsystem_0_11010 is listening on host yes55suse12133  (IPv4: 66.6.55.133) port 11010.
+[8/20/19 19:43:18:988 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain sonIncomingTcpInputChain_SonIncomingTCPSubsystem_0_11010.
+[8/20/19 19:43:18:989 CST] 00000001 Peer          I   ODCF8510I: The unstructured overlay is setting up: 66.6.55.133  udp_port=11009  tcp_port=11010.
+[8/20/19 19:43:18:995 CST] 00000037 MbuRmmAdapter I   DCSV1032I: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: Connected a defined member yes55suse12132Cell01\Custom01132\nodeagent.
+[8/20/19 19:43:19:064 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain sonOutputTcpOutputChain_0.
+[8/20/19 19:43:19:086 CST] 00000001 InterestManag I   CWOBB3000I: The bulletin board interest aware membership service has initialized.
+[8/20/19 19:43:19:089 CST] 00000001 BBFactoryImpl I   CWOBB1000I: The overlay-based bulletin board has been initialized in process yes55suse12132Cell01\Custom02133\omp-server133 in core group <null> in cell yes55suse12132Cell01.
+[8/20/19 19:43:19:119 CST] 00000001 DocumentBuild I   DCUT0001I: Dependency VESPA is at level a1544.29094710 built on 2015-10-29T13:48:12Z
+[8/20/19 19:43:19:120 CST] 00000001 DocumentBuild I   DCUT0001I: Dependency SERV1 is at level cf081543.02 built on 2015-10-29T21:25:46Z
+[8/20/19 19:43:19:121 CST] 00000001 CoordinatorCo I   HMGR0011I: The High Availability Manager is configured to be the bulletin board provider. 
+[8/20/19 19:43:19:164 CST] 00000001 DragDropDeplo I   CWLDD0103I: Monitored directory application deployment service has been configured to be off.
+[8/20/19 19:43:19:167 CST] 00000001 ExternalNodeS I   XNMI0010I: The external node stats service started successfully.
+[8/20/19 19:43:19:175 CST] 00000054 Peer          I   ODCF8531I: Added neighbor ip=66.6.55.132 udp=11005 tcp=11006 ID=b73ee32c0a1b7c6a4d40071728d88766522c1af5 version=0;cellName=yes55suse12132Cell01;bridgedCells=[];structuredGateway=true;properties={inOdc=1, MEMBER_VERSION=4, epoch=1566289025763, ODC_PUBLISHER_ONLY=false, MEMBER_STARTUP_TIME=1566289023443, memberName=yes55suse12132Cell01\dmgr\dmgr}, neighbor set size is now 1.
+[8/20/19 19:43:19:177 CST] 00000054 Peer          I   ODCF8516I: The unstructured overlay is operational, without security: 66.6.55.133  udp_port=11009  tcp_port=11010.
+[8/20/19 19:43:19:202 CST] 00000052 Peer          I   ODCF8532I: Added neighbor ip=66.6.55.132 udp=11003 tcp=11004 ID=c975d3cea9b6e272ec8a3eb2624d1fec7137dd1e version=0;cellName=yes55suse12132Cell01;bridgedCells=[];structuredGateway=true;properties={inOdc=1, epoch=1566264029588, MEMBER_STARTUP_TIME=1566264028066, memberName=yes55suse12132Cell01\Custom01132\nodeagent, MEMBER_VERSION=4}, neighbor set is now 2 nodes
+0  ip=66.6.55.132 udp=11003 tcp=11004 ID=c975d3cea9b6e272ec8a3eb2624d1fec7137dd1e version=0;cellName=yes55suse12132Cell01;bridgedCells=[];structuredGateway=true;properties={inOdc=1, epoch=1566264029588, MEMBER_STARTUP_TIME=1566264028066, memberName=yes55suse12132Cell01\Custom01132\nodeagent, MEMBER_VERSION=4}
+1  ip=66.6.55.132 udp=11005 tcp=11006 ID=b73ee32c0a1b7c6a4d40071728d88766522c1af5 version=0;cellName=yes55suse12132Cell01;bridgedCells=[];structuredGateway=true;properties={inOdc=1, MEMBER_VERSION=4, epoch=1566289025763, ODC_PUBLISHER_ONLY=false, MEMBER_STARTUP_TIME=1566289023443, memberName=yes55suse12132Cell01\dmgr\dmgr}
+.
+[8/20/19 19:43:19:283 CST] 00000001 NameServerImp A   NMSV0018I: Name server available on bootstrap port 9811.
+[8/20/19 19:43:19:417 CST] 00000001 XD            I   DCUT0002I: Loaded 64 bit native library: ProcessCPU64
+[8/20/19 19:43:19:430 CST] 00000001 XD            I   DCUT0002I: Loaded 64 bit native library: NodeDetect64
+[8/20/19 19:43:19:449 CST] 00000001 XD            I   DCUT0002I: Loaded 64 bit native library: HeapDetect64
+[8/20/19 19:43:19:450 CST] 00000001 SystemOut     O IBM WebSphere MQ classes for JMS:type=CommonServices,name=TraceControl
+[8/20/19 19:43:19:450 CST] 00000001 SystemOut     O java.lang:type=Memory
+[8/20/19 19:43:19:450 CST] 00000001 SystemOut     O WebSphere:type=ExtClassLoader
+[8/20/19 19:43:19:450 CST] 00000001 SystemOut     O java.lang:type=GarbageCollector,name=Copy
+[8/20/19 19:43:19:450 CST] 00000001 SystemOut     O java.lang:type=Runtime
+[8/20/19 19:43:19:451 CST] 00000001 SystemOut     O java.nio:type=BufferPool,name=direct
+[8/20/19 19:43:19:451 CST] 00000001 SystemOut     O java.lang:type=ClassLoading
+[8/20/19 19:43:19:451 CST] 00000001 SystemOut     O java.lang:type=MemoryManager,name=J9 non-heap manager
+[8/20/19 19:43:19:451 CST] 00000001 SystemOut     O java.lang:type=Threading
+[8/20/19 19:43:19:451 CST] 00000001 SystemOut     O java.nio:type=BufferPool,name=mapped
+[8/20/19 19:43:19:451 CST] 00000001 SystemOut     O java.util.logging:type=Logging
+[8/20/19 19:43:19:451 CST] 00000001 SystemOut     O java.lang:type=Compilation
+[8/20/19 19:43:19:451 CST] 00000001 SystemOut     O java.lang:type=MemoryPool,name=JIT data cache
+[8/20/19 19:43:19:451 CST] 00000001 SystemOut     O java.lang:type=MemoryPool,name=class storage
+[8/20/19 19:43:19:451 CST] 00000001 SystemOut     O java.lang:type=GarbageCollector,name=MarkSweepCompact
+[8/20/19 19:43:19:938 CST] 00000001 TreeBuilder   I   INIT 336 ms. nodes:41
+[8/20/19 19:43:19:941 CST] 00000001 JMSRegistrati A   WMSG1611I: The installed level of the WebSphere MQ messaging provider is 7.1.0.6.
+[8/20/19 19:43:19:951 CST] 00000001 JMSRegistrati I   WMSG1703I: RAR implementation version 7.1.0.6-k710-006-141112
+[8/20/19 19:43:19:973 CST] 00000001 ObjectPoolSer I   OBPL0010I: The Object Pool service started successfully.
+[8/20/19 19:43:20:695 CST] 00000001 JMXSoapAdapte A   ADMC0013I: The SOAP connector is available at port 8881
+[8/20/19 19:43:20:704 CST] 00000001 TCPChannel    I   TCPC0001I: TCP Channel TCPInboundChannel_ipcc.Default_IPC_Connector_Name is listening on host localhost  (IPv4: 127.0.0.1) port 9634.
+[8/20/19 19:43:20:704 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain IPCCInboundChain.Default_IPC_Connector_Name.
+[8/20/19 19:43:20:705 CST] 00000001 IPCConnectorS I   ADMC0070I: The IPC connector is available at port 9634
+[8/20/19 19:43:20:713 CST] 00000001 distSecurityC I   securityServiceStarted is true
+[8/20/19 19:43:20:714 CST] 00000001 distSecurityC I   SECJ0243I: Security service started successfully
+[8/20/19 19:43:20:714 CST] 00000001 distSecurityC I   SECJ0210I: Security enabled false
+[8/20/19 19:43:20:728 CST] 00000001 J2EEServiceMa I   ASYN0055I: The Work Manager service started successfully.
+[8/20/19 19:43:20:826 CST] 00000001 RecoveryDirec I   CWRLS0010I: Performing recovery processing for local WebSphere server (yes55suse12132Cell01\Custom02133\omp-server133).
+[8/20/19 19:43:20:840 CST] 00000001 RecoveryDirec I   CWRLS0012I: All persistent services have been directed to perform recovery processing for this WebSphere server (yes55suse12132Cell01\Custom02133\omp-server133).
+[8/20/19 19:43:20:962 CST] 00000001 ResourceMgrIm I   WSVR0049I: Binding JNDI_132_CF as eis/JNDI132_CMP
+[8/20/19 19:43:20:967 CST] 00000001 ResourceMgrIm I   WSVR0049I: Binding ECMP_JNDI_CF as eis/ECMPJNDI_CMP
+[8/20/19 19:43:21:132 CST] 00000001 ResourceMgrIm I   WSVR0049I: Binding JNDI_132 as JNDI132
+[8/20/19 19:43:21:152 CST] 00000001 ResourceMgrIm I   WSVR0049I: Binding ECMP_JNDI as ECMPJNDI
+[8/20/19 19:43:21:199 CST] 00000001 ResourceMgrIm I   WSVR0049I: Binding DefaultEJBTimerDataSource as jdbc/DefaultEJBTimerDataSource
+[8/20/19 19:43:21:218 CST] 00000001 ResourceMgrIm I   WSVR0049I: Binding DefaultWorkManager as wm/default
+[8/20/19 19:43:21:221 CST] 00000001 ResourceMgrIm I   WSVR0049I: Binding AsyncRequestDispatcherWorkManager as wm/ard
+[8/20/19 19:43:21:224 CST] 00000001 ResourceMgrIm I   WSVR0049I: Binding DefaultTimerManager as tm/default
+[8/20/19 19:43:21:238 CST] 00000001 WorkAreaServi A   ACWA0002I: WorkArea service not enabled on omp-server133.
+[8/20/19 19:43:21:242 CST] 00000001 SOAPAcceptorC I   WSSC1019I: The SOAP Acceptor Channel has been configured.
+[8/20/19 19:43:21:269 CST] 00000001 CacheServiceI I   DYNA1054I: Dynamic Cache (core cache) initialized successfully.
+[8/20/19 19:43:21:273 CST] 00000001 ObjectCacheSe I   DYNA1056I: Dynamic Cache (object cache) initialized successfully.
+[8/20/19 19:43:21:286 CST] 00000064 RecoveryManag A   WTRN0132I: Transaction recovery for yes55suse12132Cell01\Custom02133\omp-server133 initiated with server uuid 0f44a682e68095debae6c21eec9f94ad9f772a3d and restart epoch 3
+[8/20/19 19:43:21:288 CST] 00000064 RecoveryManag I   WTRN0135I: Transaction service recovering no transactions.
+[8/20/19 19:43:21:288 CST] 00000064 RecoveryManag A   WTRN0134I: Recovering 0 XA resource manager(s) from the transaction partner logs
+[8/20/19 19:43:21:298 CST] 00000064 RecoveryManag A   WTRN0133I: Transaction recovery processing for this server is complete
+[8/20/19 19:43:21:314 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0239I: Extension Factory [class com.ibm.ws.websvcs.extension.WASAxis2ExtensionFactory] was registered successfully.
+[8/20/19 19:43:21:314 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0240I: Extension Factory [class com.ibm.ws.websvcs.extension.WASAxis2ExtensionFactory] has been associated with patterns [""].
+[8/20/19 19:43:21:315 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0239I: Extension Factory [class com.ibm.ws.websvcs.extension.AsyncServletExtensionFactory] was registered successfully.
+[8/20/19 19:43:21:315 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0240I: Extension Factory [class com.ibm.ws.websvcs.extension.AsyncServletExtensionFactory] has been associated with patterns [""].
+[8/20/19 19:43:21:327 CST] 00000001 WASAxis2Compo I   WSWS7001I: The Axis2 service has been started.
+[8/20/19 19:43:21:390 CST] 00000001 SchedulerServ I   SCHD0031I: The Scheduler Service is starting.
+[8/20/19 19:43:21:391 CST] 00000001 SchedulerServ I   SCHD0001I: The Scheduler Service has started.
+[8/20/19 19:43:21:391 CST] 00000001 JPAComponentI I   CWWJP0028I: The Java Persistence API (JPA) component is starting.
+[8/20/19 19:43:21:392 CST] 00000001 JPAComponentI I   CWWJP0017I: The Java Persistence API (JPA) component has started.
+[8/20/19 19:43:21:428 CST] 00000001 ServerCache   I   DYNA1001I: WebSphere Dynamic Cache instance named ws/com.ibm.ws.wssecurity.sctClientCacheMap initialized successfully.
+[8/20/19 19:43:21:429 CST] 00000001 ServerCache   I   DYNA1071I: The cache provider "default" is being used.
+[8/20/19 19:43:21:431 CST] 00000001 ServerCache   I   DYNA1001I: WebSphere Dynamic Cache instance named ws/com.ibm.ws.wssecurity.sctServiceCacheMap initialized successfully.
+[8/20/19 19:43:21:431 CST] 00000001 ServerCache   I   DYNA1071I: The cache provider "default" is being used.
+[8/20/19 19:43:21:465 CST] 00000001 RegistryConfi I   CWXRS0017I: Extension Registry objects storage: /opt/IBM/WebSphere/AppServer/profiles/Custom02/temp/Custom02133/omp-server133/_extensionregistry
+[8/20/19 19:43:21:470 CST] 00000001 ServerCache   I   DYNA1001I: WebSphere Dynamic Cache instance named ws/com.ibm.workplace/ExtensionRegistryCache initialized successfully.
+[8/20/19 19:43:21:471 CST] 00000001 ServerCache   I   DYNA1071I: The cache provider "default" is being used.
+[8/20/19 19:43:21:472 CST] 00000001 RegistryCache I   CWXRS0002I: DynaCache instance for Extension Registry created with CACHE_SIZE: 5000
+[8/20/19 19:43:21:700 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0239I: Extension Factory [class com.ibm.ws.container.binding.http.HTTPExtensionFactory] was registered successfully.
+[8/20/19 19:43:21:701 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0240I: Extension Factory [class com.ibm.ws.container.binding.http.HTTPExtensionFactory] has been associated with patterns [""].
+[8/20/19 19:43:21:702 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0239I: Extension Factory [class com.ibm.ws.jsf.extprocessor.JSFExtensionFactory] was registered successfully.
+[8/20/19 19:43:21:703 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0240I: Extension Factory [class com.ibm.ws.jsf.extprocessor.JSFExtensionFactory] has been associated with patterns [""].
+[8/20/19 19:43:21:738 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0239I: Extension Factory [class com.ibm.ws.portletcontainer.webextension.PortletExtensionFactory] was registered successfully.
+[8/20/19 19:43:21:739 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0240I: Extension Factory [class com.ibm.ws.portletcontainer.webextension.PortletExtensionFactory] has been associated with patterns [""].
+[8/20/19 19:43:21:739 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0239I: Extension Factory [class com.ibm.ws.portletcontainer.portletserving.PortletServingExtensionFactory] was registered successfully.
+[8/20/19 19:43:21:739 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0240I: Extension Factory [class com.ibm.ws.portletcontainer.portletserving.PortletServingExtensionFactory] has been associated with patterns [""].
+[8/20/19 19:43:21:741 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0239I: Extension Factory [class com.ibm.ws.jsp.webcontainerext.ws.WASJSPExtensionFactory] was registered successfully.
+[8/20/19 19:43:21:742 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0240I: Extension Factory [class com.ibm.ws.jsp.webcontainerext.ws.WASJSPExtensionFactory] has been associated with patterns [*.jsp *.jspx *.jsw *.jsv ].
+[8/20/19 19:43:21:870 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0239I: Extension Factory [class com.ibm.ws.ard.extension.ARDExtensionFactory] was registered successfully.
+[8/20/19 19:43:21:871 CST] 00000001 WebContainer  I com.ibm.ws.webcontainer.internal.WebContainer addExtensionFactory SRVE0240I: Extension Factory [class com.ibm.ws.ard.extension.ARDExtensionFactory] has been associated with patterns [""].
+[8/20/19 19:43:21:909 CST] 00000001 OAuth20Provid I   CWOAU0001I: Initializing OAuth 20 providers.
+[8/20/19 19:43:21:986 CST] 0000006a CompositionUn A   WSVR0190I: Starting composition unit WebSphere:cuname=ibmasyncrsp in BLA WebSphere:blaname=ibmasyncrsp.
+[8/20/19 19:43:21:990 CST] 0000006c CompositionUn A   WSVR0190I: Starting composition unit WebSphere:cuname=Test33_war in BLA WebSphere:blaname=Test33_war.
+[8/20/19 19:43:21:990 CST] 0000006b CompositionUn A   WSVR0190I: Starting composition unit WebSphere:cuname=omp_133_war in BLA WebSphere:blaname=omp_133_war.
+[8/20/19 19:43:22:134 CST] 00000052 Peer          I   ODCF8531I: Added neighbor ip=66.6.55.133 udp=11003 tcp=11004 ID=35c91dc8dcafc6bc40623132632fa54518e8fcd8 version=0;cellName=yes55suse12132Cell01;bridgedCells=[];structuredGateway=true;properties={inOdc=1, epoch=1566301378816, MEMBER_STARTUP_TIME=1566301378006, memberName=yes55suse12132Cell01\Custom02133\nodeagent, MEMBER_VERSION=4}, neighbor set size is now 3.
+[8/20/19 19:43:22:177 CST] 0000006a ApplicationMg A   WSVR0200I: Starting application: ibmasyncrsp
+[8/20/19 19:43:22:177 CST] 0000006a ApplicationMg A   WSVR0203I: Application: ibmasyncrsp  Application build level: 1 [2]
+[8/20/19 19:43:22:208 CST] 0000006c ApplicationMg A   WSVR0200I: Starting application: Test33_war
+[8/20/19 19:43:22:209 CST] 0000006c ApplicationMg A   WSVR0204I: Application: Test33_war  Application build level: Unknown
+[8/20/19 19:43:22:228 CST] 0000006d Peer          I   ODCF8532I: Added neighbor ip=66.6.55.132 udp=11007 tcp=11008 ID=908cca1349a9e7c12188bc181265f45a265ec715 version=0;cellName=yes55suse12132Cell01;bridgedCells=[];structuredGateway=false;properties={inOdc=1, epoch=1566265004805, MEMBER_STARTUP_TIME=1566264953646, memberName=yes55suse12132Cell01\Custom01132\omp-server132, MEMBER_VERSION=4}, neighbor set is now 4 nodes
+0  ip=66.6.55.132 udp=11007 tcp=11008 ID=908cca1349a9e7c12188bc181265f45a265ec715 version=0;cellName=yes55suse12132Cell01;bridgedCells=[];structuredGateway=false;properties={inOdc=1, epoch=1566265004805, MEMBER_STARTUP_TIME=1566264953646, memberName=yes55suse12132Cell01\Custom01132\omp-server132, MEMBER_VERSION=4}
+1  ip=66.6.55.133 udp=11003 tcp=11004 ID=35c91dc8dcafc6bc40623132632fa54518e8fcd8 version=0;cellName=yes55suse12132Cell01;bridgedCells=[];structuredGateway=true;properties={inOdc=1, epoch=1566301378816, MEMBER_STARTUP_TIME=1566301378006, memberName=yes55suse12132Cell01\Custom02133\nodeagent, MEMBER_VERSION=4}
+2  ip=66.6.55.132 udp=11003 tcp=11004 ID=c975d3cea9b6e272ec8a3eb2624d1fec7137dd1e version=0;cellName=yes55suse12132Cell01;bridgedCells=[];structuredGateway=true;properties={inOdc=1, epoch=1566264029588, MEMBER_STARTUP_TIME=1566264028066, memberName=yes55suse12132Cell01\Custom01132\nodeagent, MEMBER_VERSION=4}
+3  ip=66.6.55.132 udp=11005 tcp=11006 ID=b73ee32c0a1b7c6a4d40071728d88766522c1af5 version=0;cellName=yes55suse12132Cell01;bridgedCells=[];structuredGateway=true;properties={inOdc=1, MEMBER_VERSION=4, epoch=1566289025763, ODC_PUBLISHER_ONLY=false, MEMBER_STARTUP_TIME=1566289023443, memberName=yes55suse12132Cell01\dmgr\dmgr}
+.
+[8/20/19 19:43:22:773 CST] 0000006b ApplicationMg A   WSVR0200I: Starting application: omp_133_war
+[8/20/19 19:43:22:773 CST] 0000006b ApplicationMg A   WSVR0204I: Application: omp_133_war  Application build level: Unknown
+[8/20/19 19:43:23:008 CST] 00000036 RoleViewLeade I   DCSV8054I: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: View change in process. 
+[8/20/19 19:43:23:016 CST] 00000037 VSyncAlgo1    I   DCSV2004I: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: View synchronization completed successfully. The View Identifier is (1:0.yes55suse12132Cell01\Custom02133\omp-server133). The internal details are None.
+[8/20/19 19:43:23:020 CST] 0000006c webcontainer  I com.ibm.ws.webcontainer.WSWebContainer initialize SRVE0161I: IBM WebSphere Application Server - Web Container.  Copyright IBM Corp. 1998-2012
+[8/20/19 19:43:23:021 CST] 0000006c webcontainer  I com.ibm.ws.webcontainer.WSWebContainer initialize SRVE0162I: Servlet Specification Level: 3.0
+[8/20/19 19:43:23:021 CST] 0000006c webcontainer  I com.ibm.ws.webcontainer.WSWebContainer initialize SRVE0163I: Supported JSP Specification Level: 2.2
+[8/20/19 19:43:23:043 CST] 00000036 MBRStateXchg  I   DCSV8070I: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: Updated HA Manager state. New state version is CoreGroupConfig : MemberName dmgr, DMGR true, time read 1565425813037, number coordinators 1, numberPreferred 0, numberProcesses 5, version 69c9934c2ce0dc76f770149ecb1ebe66f285739f 
+[8/20/19 19:43:23:044 CST] 00000036 CoordinatorCo I   HMGR0086I: This server is updating its core group configuration. The new document version is CoreGroupConfig : MemberName dmgr, DMGR true, time read 1565425813037, number coordinators 1, numberPreferred 0, numberProcesses 5, version 69c9934c2ce0dc76f770149ecb1ebe66f285739f.
+[8/20/19 19:43:23:054 CST] 00000036 CoordinatorIm I   HMGR0228I: The Coordinator is not an Active Coordinator for core group DefaultCoreGroup. The active coordinator set is [yes55suse12132Cell01\Custom01132\nodeagent].
+[8/20/19 19:43:23:055 CST] 00000047 ViewReceiver  I   DCSV1033I: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: Confirmed all new view members in view identifier (125:0.yes55suse12132Cell01\Custom01132\nodeagent). View channel type is View|Ptp.
+[8/20/19 19:43:23:072 CST] 00000036 CoordinatorIm I   HMGR0218I: A new core group view has been installed. The core group is DefaultCoreGroup. The view identifier is (125:0.yes55suse12132Cell01\Custom01132\nodeagent). The number of members in the new view is 5.
+[8/20/19 19:43:23:072 CST] 00000036 CoreGroupMemb I   DCSV8050I: DCS Stack DefaultCoreGroup at Member yes55suse12132Cell01\Custom02133\omp-server133: New view installed, identifier (125:0.yes55suse12132Cell01\Custom01132\nodeagent), view size is 5 (AV=5, CD=5, CN=5, DF=5)
+[8/20/19 19:43:23:074 CST] 0000006c webcontainer  I com.ibm.ws.webcontainer.WSWebContainer addVirtualHostExtensionFactory SRVE0239I: Extension Factory [class com.ibm.ws.webcontainer.extension.ExtHandshakeVHostExtensionFactory] was registered successfully.
+[8/20/19 19:43:23:075 CST] 0000006c webcontainer  I com.ibm.ws.webcontainer.WSWebContainer addVirtualHostExtensionFactory SRVE0240I: Extension Factory [class com.ibm.ws.webcontainer.extension.ExtHandshakeVHostExtensionFactory] has been associated with patterns [VH:_WS_EH* ].
+[8/20/19 19:43:23:090 CST] 0000006c webapp        I com.ibm.ws.webcontainer.webapp.WebGroupImpl WebGroup SRVE0169I: Loading Web Module: Test.war.
+[8/20/19 19:43:23:212 CST] 0000006c WASSessionCor I SessionContextRegistry getSessionContext SESN0176I: Will create a new session context for application key default_host/test
+[8/20/19 19:43:23:591 CST] 0000006c webcontainer  I com.ibm.ws.webcontainer.VirtualHostImpl addWebApplication SRVE0250I: Web Module null has been bound to default_host[*:9080,*:80,*:9443,*:5060,*:5061,*:443,yes55suse12133:9080,yes55suse12133:80,yes55suse12133:9443,yes55suse12133:5060,yes55suse12133:5061,yes55suse12133:443,*:9081].
+[8/20/19 19:43:23:606 CST] 0000006a webapp        I com.ibm.ws.webcontainer.webapp.WebGroupImpl WebGroup SRVE0169I: Loading Web Module: WebSphere ASYNC Response Servlet Application.
+[8/20/19 19:43:23:612 CST] 0000006a WASSessionCor I SessionContextRegistry getSessionContext SESN0176I: Will create a new session context for application key default_host/IBM_WS_SYS_RESPONSESERVLET
+[8/20/19 19:43:23:675 CST] 0000006a ServletWrappe I com.ibm.ws.webcontainer.servlet.ServletWrapper init SRVE0242I: [ibmasyncrsp] [/IBM_WS_SYS_RESPONSESERVLET] [rspservlet]: Initialization successful.
+[8/20/19 19:43:23:676 CST] 0000006a webcontainer  I com.ibm.ws.webcontainer.VirtualHostImpl addWebApplication SRVE0250I: Web Module WebSphere ASYNC Response Servlet Application has been bound to default_host[*:9080,*:80,*:9443,*:5060,*:5061,*:443,yes55suse12133:9080,yes55suse12133:80,yes55suse12133:9443,yes55suse12133:5060,yes55suse12133:5061,yes55suse12133:443,*:9081].
+[8/20/19 19:43:23:704 CST] 0000006c ApplicationMg A   WSVR0221I: Application started: Test33_war
+[8/20/19 19:43:23:704 CST] 0000006c CompositionUn A   WSVR0191I: Composition unit WebSphere:cuname=Test33_war in BLA WebSphere:blaname=Test33_war started.
+[8/20/19 19:43:23:730 CST] 0000006a ApplicationMg A   WSVR0221I: Application started: ibmasyncrsp
+[8/20/19 19:43:23:730 CST] 0000006a CompositionUn A   WSVR0191I: Composition unit WebSphere:cuname=ibmasyncrsp in BLA WebSphere:blaname=ibmasyncrsp started.
+[8/20/19 19:43:43:810 CST] 00000057 NGUtil$Server I   ASND0002I: Detected server omp-server132 started on node Custom01132
+[8/20/19 19:43:44:198 CST] 00000056 NGUtil$Server I   ASND0002I: Detected server nodeagent started on node Custom01132
+[8/20/19 19:43:44:199 CST] 00000056 NGUtil$Server I   ASND0002I: Detected server dmgr started on node dmgr
+[8/20/19 19:43:44:534 CST] 00000056 NGUtil$Server I   ASND0002I: Detected server nodeagent started on node Custom02133
+[8/20/19 19:43:45:557 CST] 0000006b FfdcProvider  W com.ibm.ws.ffdc.impl.FfdcProvider logIncident FFDC1003I: FFDC Incident emitted on /opt/IBM/WebSphere/AppServer/profiles/Custom02/logs/ffdc/omp-server133_130da351_19.08.20_19.43.45.3378276546228136682109.txt com.ibm.ws.websvcs.desc.WSModuleDescriptorImpl.buildServices 1406
+[8/20/19 19:43:45:558 CST] 0000006b WSModuleDescr E   WSWS7027E: JAX-WS Service Descriptions could not be correctly built because of the following error: javax.xml.ws.WebServiceException: Validation error: WebMethod annotations cannot exist on implentation when WebService.endpointInterface is set.  Implementation class: com.geor.cboms.frame.service.impl.AccessControlServiceImpl
+	at org.apache.axis2.jaxws.ExceptionFactory.createWebServiceException(ExceptionFactory.java:173)
+	at org.apache.axis2.jaxws.ExceptionFactory.makeWebServiceException(ExceptionFactory.java:70)
+	at org.apache.axis2.jaxws.ExceptionFactory.makeWebServiceException(ExceptionFactory.java:118)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.validateIntegrity(ServiceDescriptionImpl.java:1691)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.validateDBCLIntegrity(ServiceDescriptionImpl.java:1560)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.<init>(ServiceDescriptionImpl.java:356)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.<init>(ServiceDescriptionImpl.java:297)
+	at org.apache.axis2.jaxws.description.impl.DescriptionFactoryImpl.createServiceDescriptionFromDBCMap(DescriptionFactoryImpl.java:277)
+	at org.apache.axis2.jaxws.description.DescriptionFactory.createServiceDescriptionFromDBCMap(DescriptionFactory.java:524)
+	at com.ibm.ws.websvcs.desc.WSModuleDescriptorImpl.buildJAXWSServices(WSModuleDescriptorImpl.java:1389)
+	at com.ibm.ws.websvcs.desc.WSModuleDescriptorImpl._getJAXWSServices(WSModuleDescriptorImpl.java:764)
+	at com.ibm.ws.websvcs.desc.WSModuleDescriptorImpl.getJAXWSServices(WSModuleDescriptorImpl.java:748)
+	at com.ibm.ws.websvcs.deploy.URLPatternHelper.getJAXWSWebServicesUrlPatterns(URLPatternHelper.java:122)
+	at com.ibm.ws.websvcs.deploy.URLPatternHelper.getWebServicesUrlPatterns(URLPatternHelper.java:65)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:88)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:55)
+	at java.lang.reflect.Method.invoke(Method.java:613)
+	at com.ibm.ws.odc.nd.cell.TreeBuilder.getWebServicesUrlPatterns(TreeBuilder.java:3512)
+	at com.ibm.ws.odc.nd.cell.TreeBuilder.processWebModule(TreeBuilder.java:3048)
+	at com.ibm.ws.odc.xd.XDTreeBuilder.processWebModule(XDTreeBuilder.java:4257)
+	at com.ibm.ws.odc.nd.cell.TreeBuilder.readApplication(TreeBuilder.java:2535)
+	at com.ibm.ws.odc.nd.cell.TreeBuilder.obtainAppNode(TreeBuilder.java:3704)
+	at com.ibm.ws.odc.nd.cell.TreeBuilder.stateChanged(TreeBuilder.java:547)
+	at com.ibm.ws.odc.nd.cell.TreeBuilder$LocalEventListener.stateChanged(TreeBuilder.java:6121)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl.stateChanged(ApplicationMgrImpl.java:1122)
+	at com.ibm.ws.runtime.component.DeployedApplicationImpl.fireDeployedObjectEvent(DeployedApplicationImpl.java:1365)
+	at com.ibm.ws.runtime.component.DeployedApplicationImpl.setState(DeployedApplicationImpl.java:297)
+	at com.ibm.ws.runtime.component.DeployedApplicationImpl.start(DeployedApplicationImpl.java:962)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl.startApplication(ApplicationMgrImpl.java:776)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl$5.run(ApplicationMgrImpl.java:2195)
+	at com.ibm.ws.security.auth.ContextManagerImpl.runAs(ContextManagerImpl.java:5387)
+	at com.ibm.ws.security.auth.ContextManagerImpl.runAsSystem(ContextManagerImpl.java:5603)
+	at com.ibm.ws.security.core.SecurityContext.runAsSystem(SecurityContext.java:255)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl.start(ApplicationMgrImpl.java:2200)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.start(CompositionUnitMgrImpl.java:435)
+	at com.ibm.ws.runtime.component.CompositionUnitImpl.start(CompositionUnitImpl.java:123)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.start(CompositionUnitMgrImpl.java:378)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.access$500(CompositionUnitMgrImpl.java:126)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl$CUInitializer.run(CompositionUnitMgrImpl.java:984)
+	at com.ibm.wsspi.runtime.component.WsComponentImpl$_AsynchInitializer.run(WsComponentImpl.java:502)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1881)
+
+[8/20/19 19:44:05:537 CST] 0000006b WASAxis2MetaD E   WSWS7045E: The ConfigurationContext for the omp.war application module cannot be created correctly because of the following error:  javax.xml.ws.WebServiceException: Validation error: WebMethod annotations cannot exist on implentation when WebService.endpointInterface is set.  Implementation class: com.geor.cboms.frame.service.impl.AccessControlServiceImpl
+[8/20/19 19:44:05:570 CST] 0000006b FfdcProvider  W com.ibm.ws.ffdc.impl.FfdcProvider logIncident FFDC1003I: FFDC Incident emitted on /opt/IBM/WebSphere/AppServer/profiles/Custom02/logs/ffdc/omp-server133_130da351_19.08.20_19.44.05.5391171819343129192177.txt com.ibm.ws.websvcs.component.WASAxis2ComponentImpl.moduleJarMetaDataCreated 1733
+[8/20/19 19:44:05:570 CST] 0000006b WASAxis2Compo E   WSWS7007E: The omp.war application module cannot be loaded correctly because of the following error: javax.xml.ws.WebServiceException: Validation error: WebMethod annotations cannot exist on implentation when WebService.endpointInterface is set.  Implementation class: com.geor.cboms.frame.service.impl.AccessControlServiceImpl
+	at org.apache.axis2.jaxws.ExceptionFactory.createWebServiceException(ExceptionFactory.java:173)
+	at org.apache.axis2.jaxws.ExceptionFactory.makeWebServiceException(ExceptionFactory.java:70)
+	at org.apache.axis2.jaxws.ExceptionFactory.makeWebServiceException(ExceptionFactory.java:118)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.validateIntegrity(ServiceDescriptionImpl.java:1691)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.validateDBCLIntegrity(ServiceDescriptionImpl.java:1560)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.<init>(ServiceDescriptionImpl.java:356)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.<init>(ServiceDescriptionImpl.java:297)
+	at org.apache.axis2.jaxws.description.impl.DescriptionFactoryImpl.createServiceDescriptionFromDBCMap(DescriptionFactoryImpl.java:277)
+	at org.apache.axis2.jaxws.description.DescriptionFactory.createServiceDescriptionFromDBCMap(DescriptionFactory.java:524)
+	at com.ibm.ws.websvcs.deployment.WASAxis2MetaDataProcessor.processModuleMetadata(WASAxis2MetaDataProcessor.java:445)
+	at com.ibm.ws.websvcs.deployment.WASAxis2MetaDataProcessor.processApplicationMetaData(WASAxis2MetaDataProcessor.java:206)
+	at com.ibm.ws.websvcs.component.WASAxis2ComponentImpl.moduleMetaDataCreated(WASAxis2ComponentImpl.java:2373)
+	at com.ibm.ws.websvcs.component.WASAxis2ComponentImpl.metaDataCreated(WASAxis2ComponentImpl.java:1021)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.fireMetaDataCreated(MetaDataMgrImpl.java:279)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.fireMetaDataCreated(MetaDataMgrImpl.java:262)
+	at com.ibm.ws.webcontainer.metadata.WebMetaDataFactory.createMetaData(WebMetaDataFactory.java:244)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.createMetaDataFromFactories(MetaDataMgrImpl.java:228)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.createMetaData(MetaDataMgrImpl.java:411)
+	at com.ibm.ws.runtime.component.DeployedModuleImpl.start(DeployedModuleImpl.java:631)
+	at com.ibm.ws.runtime.component.DeployedApplicationImpl.start(DeployedApplicationImpl.java:971)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl.startApplication(ApplicationMgrImpl.java:776)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl$5.run(ApplicationMgrImpl.java:2195)
+	at com.ibm.ws.security.auth.ContextManagerImpl.runAs(ContextManagerImpl.java:5387)
+	at com.ibm.ws.security.auth.ContextManagerImpl.runAsSystem(ContextManagerImpl.java:5603)
+	at com.ibm.ws.security.core.SecurityContext.runAsSystem(SecurityContext.java:255)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl.start(ApplicationMgrImpl.java:2200)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.start(CompositionUnitMgrImpl.java:435)
+	at com.ibm.ws.runtime.component.CompositionUnitImpl.start(CompositionUnitImpl.java:123)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.start(CompositionUnitMgrImpl.java:378)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.access$500(CompositionUnitMgrImpl.java:126)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl$CUInitializer.run(CompositionUnitMgrImpl.java:984)
+	at com.ibm.wsspi.runtime.component.WsComponentImpl$_AsynchInitializer.run(WsComponentImpl.java:502)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1881)
+
+[8/20/19 19:44:05:620 CST] 0000006b DeployedAppli W   WSVR0206E: Module, omp.war, of application, omp_133_war.ear/deployments/omp_133_war, failed to start
+[8/20/19 19:44:05:640 CST] 0000006b ApplicationMg E   WSVR0101W: An error occurred starting, omp_133_war
+[8/20/19 19:44:05:641 CST] 0000006b ApplicationMg A   WSVR0217I: Stopping application: omp_133_war
+[8/20/19 19:44:05:676 CST] 0000006b ApplicationMg A   WSVR0220I: Application stopped: omp_133_war
+[8/20/19 19:44:05:753 CST] 0000006b FfdcProvider  W com.ibm.ws.ffdc.impl.FfdcProvider logIncident FFDC1003I: FFDC Incident emitted on /opt/IBM/WebSphere/AppServer/profiles/Custom02/logs/ffdc/omp-server133_130da351_19.08.20_19.44.05.730477078211998223252.txt com.ibm.ws.runtime.component.ApplicationMgrImpl 2065
+[8/20/19 19:44:05:758 CST] 0000006b CompositionUn E   WSVR0194E: Composition unit WebSphere:cuname=omp_133_war in BLA WebSphere:blaname=omp_133_war failed to start.
+[8/20/19 19:44:05:760 CST] 0000006b FfdcProvider  W com.ibm.ws.ffdc.impl.FfdcProvider logIncident FFDC1003I: FFDC Incident emitted on /opt/IBM/WebSphere/AppServer/profiles/Custom02/logs/ffdc/omp-server133_130da351_19.08.20_19.44.05.7591850641962047797250.txt com.ibm.wsspi.runtime.component.WsComponentImpl 297
+[8/20/19 19:44:05:760 CST] 00000001 ContainerHelp E   WSVR0501E: Error creating component com.ibm.ws.runtime.component.CompositionUnitMgrImpl@f8065e0b
+com.ibm.ws.exception.RuntimeWarning: com.ibm.ws.exception.RuntimeError: javax.xml.ws.WebServiceException: Validation error: WebMethod annotations cannot exist on implentation when WebService.endpointInterface is set.  Implementation class: com.geor.cboms.frame.service.impl.AccessControlServiceImpl
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.startCUList(CompositionUnitMgrImpl.java:1285)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.start(CompositionUnitMgrImpl.java:274)
+	at com.ibm.ws.runtime.component.ContainerHelper.startComponents(ContainerHelper.java:540)
+	at com.ibm.ws.runtime.component.ContainerImpl.startComponents(ContainerImpl.java:627)
+	at com.ibm.ws.runtime.component.ContainerImpl.start(ContainerImpl.java:618)
+	at com.ibm.ws.runtime.component.ApplicationServerImpl.start(ApplicationServerImpl.java:252)
+	at com.ibm.ws.runtime.component.ContainerHelper.startComponents(ContainerHelper.java:540)
+	at com.ibm.ws.runtime.component.ContainerImpl.startComponents(ContainerImpl.java:627)
+	at com.ibm.ws.runtime.component.ContainerImpl.start(ContainerImpl.java:618)
+	at com.ibm.ws.runtime.component.ServerImpl.start(ServerImpl.java:540)
+	at com.ibm.ws.runtime.WsServerImpl.bootServerContainer(WsServerImpl.java:311)
+	at com.ibm.ws.runtime.WsServerImpl.start(WsServerImpl.java:224)
+	at com.ibm.ws.runtime.WsServerImpl.main(WsServerImpl.java:697)
+	at com.ibm.ws.runtime.WsServer.main(WsServer.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:88)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:55)
+	at java.lang.reflect.Method.invoke(Method.java:613)
+	at com.ibm.wsspi.bootstrap.WSLauncher.launchMain(WSLauncher.java:234)
+	at com.ibm.wsspi.bootstrap.WSLauncher.main(WSLauncher.java:96)
+	at com.ibm.wsspi.bootstrap.WSLauncher.run(WSLauncher.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:88)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:55)
+	at java.lang.reflect.Method.invoke(Method.java:613)
+	at org.eclipse.equinox.internal.app.EclipseAppContainer.callMethodWithException(EclipseAppContainer.java:587)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:198)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:88)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:55)
+	at java.lang.reflect.Method.invoke(Method.java:613)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:340)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:282)
+	at org.eclipse.core.launcher.Main.run(Main.java:981)
+	at com.ibm.wsspi.bootstrap.WSPreLauncher.launchEclipse(WSPreLauncher.java:401)
+	at com.ibm.wsspi.bootstrap.WSPreLauncher.main(WSPreLauncher.java:164)
+Caused by: com.ibm.ws.exception.RuntimeError: javax.xml.ws.WebServiceException: Validation error: WebMethod annotations cannot exist on implentation when WebService.endpointInterface is set.  Implementation class: com.geor.cboms.frame.service.impl.AccessControlServiceImpl
+	at com.ibm.ws.websvcs.component.WASAxis2ComponentImpl.metaDataCreated(WASAxis2ComponentImpl.java:1025)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.fireMetaDataCreated(MetaDataMgrImpl.java:279)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.fireMetaDataCreated(MetaDataMgrImpl.java:262)
+	at com.ibm.ws.webcontainer.metadata.WebMetaDataFactory.createMetaData(WebMetaDataFactory.java:244)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.createMetaDataFromFactories(MetaDataMgrImpl.java:228)
+	at com.ibm.ws.runtime.component.MetaDataMgrImpl.createMetaData(MetaDataMgrImpl.java:411)
+	at com.ibm.ws.runtime.component.DeployedModuleImpl.start(DeployedModuleImpl.java:631)
+	at com.ibm.ws.runtime.component.DeployedApplicationImpl.start(DeployedApplicationImpl.java:971)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl.startApplication(ApplicationMgrImpl.java:776)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl$5.run(ApplicationMgrImpl.java:2195)
+	at com.ibm.ws.security.auth.ContextManagerImpl.runAs(ContextManagerImpl.java:5387)
+	at com.ibm.ws.security.auth.ContextManagerImpl.runAsSystem(ContextManagerImpl.java:5603)
+	at com.ibm.ws.security.core.SecurityContext.runAsSystem(SecurityContext.java:255)
+	at com.ibm.ws.runtime.component.ApplicationMgrImpl.start(ApplicationMgrImpl.java:2200)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.start(CompositionUnitMgrImpl.java:435)
+	at com.ibm.ws.runtime.component.CompositionUnitImpl.start(CompositionUnitImpl.java:123)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.start(CompositionUnitMgrImpl.java:378)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl.access$500(CompositionUnitMgrImpl.java:126)
+	at com.ibm.ws.runtime.component.CompositionUnitMgrImpl$CUInitializer.run(CompositionUnitMgrImpl.java:984)
+	at com.ibm.wsspi.runtime.component.WsComponentImpl$_AsynchInitializer.run(WsComponentImpl.java:502)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1881)
+Caused by: javax.xml.ws.WebServiceException: Validation error: WebMethod annotations cannot exist on implentation when WebService.endpointInterface is set.  Implementation class: com.geor.cboms.frame.service.impl.AccessControlServiceImpl
+	at org.apache.axis2.jaxws.ExceptionFactory.createWebServiceException(ExceptionFactory.java:173)
+	at org.apache.axis2.jaxws.ExceptionFactory.makeWebServiceException(ExceptionFactory.java:70)
+	at org.apache.axis2.jaxws.ExceptionFactory.makeWebServiceException(ExceptionFactory.java:118)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.validateIntegrity(ServiceDescriptionImpl.java:1691)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.validateDBCLIntegrity(ServiceDescriptionImpl.java:1560)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.<init>(ServiceDescriptionImpl.java:356)
+	at org.apache.axis2.jaxws.description.impl.ServiceDescriptionImpl.<init>(ServiceDescriptionImpl.java:297)
+	at org.apache.axis2.jaxws.description.impl.DescriptionFactoryImpl.createServiceDescriptionFromDBCMap(DescriptionFactoryImpl.java:277)
+	at org.apache.axis2.jaxws.description.DescriptionFactory.createServiceDescriptionFromDBCMap(DescriptionFactory.java:524)
+	at com.ibm.ws.websvcs.deployment.WASAxis2MetaDataProcessor.processModuleMetadata(WASAxis2MetaDataProcessor.java:445)
+	at com.ibm.ws.websvcs.deployment.WASAxis2MetaDataProcessor.processApplicationMetaData(WASAxis2MetaDataProcessor.java:206)
+	at com.ibm.ws.websvcs.component.WASAxis2ComponentImpl.moduleMetaDataCreated(WASAxis2ComponentImpl.java:2373)
+	at com.ibm.ws.websvcs.component.WASAxis2ComponentImpl.metaDataCreated(WASAxis2ComponentImpl.java:1021)
+	... 20 more
+
+[8/20/19 19:44:05:765 CST] 00000001 WsmmConfigFac I   ARFM5007I: ARFM configuration for cell yes55suse12132Cell01 is { arfmManageCpu=true arfmQueueMode=cluster ARFM.Mode=Automatic ARFM.MagicNOverride=-1 ARFM.MagicNMode=false aggregationPeriod=5.0 sec ctlCycleMinLength=59.0 sec smoothingWindow=12 maxQueueLen=1000 cpuLimit=100% cpuLimitForCappedVMs=95.0% WorkProfiler.Period=1.0 min WorkProfiler.HalfLife=10.0 min WorkProfiler.AlphaSmoothingHalfLife=10.0 min UseODRs=true WorkProfiler.UseProcessCPU=true WorkProfiler.UseOverhead=false goodnessWeightThreshold=20.0 goodnessWeightFactor=20.0 rhoWeightThreshold=20.0 rhoWeightFactor=8.0 goodnessThreshold=20.0 timeoutFactor=-1.0 timeoutRelaxMinutes=5.0 stuckTension=1.0 initialNominalSrvTime=100 inactivityMinutes=5.0 borrowFactorLimit=1.0 limitBorrowingByPackedPower=false serverStatsWaitTime=2000 nomSrvTimeHalfLife=60000 ratioHalfLife=600000 dlgDspRateHalfLife=600000 msgDspRateHalfLife=300000 initialMsgDlgRatioHalfLife=600000 initialMsgDlgRatio=6.0 msgDlgRatioBadTime=300000 highMemUtilLimit=1.0 profilerSolver=null profilerCorrelationLimit=0.95 profilerCorrelationWithYLimit=0.14 profilerCyclesBetweenSaves=15 memoryOverloadProtectionControlBroadcastPeriodSec=30 memoryOverloadProtectionControlBroadcastShortPeriodSec=15 memoryMarginRatio_fromCell=null maxNonFullGcMemoryReleaseMBOverride=-1 explicitGcPeriodSecOverride=-1 gcReleasesQuicklyOverride=null gcOptimizesThroughputOverride=null memUtilUpHalflife=1000000.0 memUtilDownHalflife=0.0 limitPower=false detectTxcViolations=false detectSvcViolations=true averagingWindowInMS=180000 intervalPerIndividualCountsInMS=10000 minStdDevRatio=0.25 maxZoneFactor=0.99 rampUpFactor=0.95 initialMaxRatePerSec=3.4028235E38 storageServiceWaitTimeInMs=5000 rampUpWithoutFeedbackInMs=180000 moc6AveragingWindowInMS=50000 moc6IntervalPerIndividualCountsInMS=1000 moc6UsePersistentStorage=true usePersistentStorage=false useSlope=true fastRampUp=true closeToMaxFraction=0.5 minSlopePointRate=5.0 minSlopePointRateDiff=5.0 concurrencyDivisor=null workProfilerServerStartupDelayMillis=61440 workProfilerMinimumCPUUtilization=0.003000000026077032 minimumCPURhoMultiplier=0.75 minimumCPURhoWeight=5.0 EnableFilters=true SipCpuOverloadProtection=true HttpAdmCtlForCpuOverloadProtection=true SipAdmCtlForCpuOverloadProtection=true AutoMemoryOverloadProtection=true MemoryMarginRatio_pvt=2.0}.
+[8/20/19 19:44:05:767 CST] 00000001 WsmmConfigFac I   ARFM5007I: ARFM configuration for cell yes55suse12132Cell01 is { arfmManageCpu=true arfmQueueMode=cluster ARFM.Mode=Automatic ARFM.MagicNOverride=-1 ARFM.MagicNMode=false aggregationPeriod=5.0 sec ctlCycleMinLength=59.0 sec smoothingWindow=12 maxQueueLen=1000 cpuLimit=100% cpuLimitForCappedVMs=95.0% WorkProfiler.Period=1.0 min WorkProfiler.HalfLife=10.0 min WorkProfiler.AlphaSmoothingHalfLife=10.0 min UseODRs=true WorkProfiler.UseProcessCPU=true WorkProfiler.UseOverhead=false goodnessWeightThreshold=20.0 goodnessWeightFactor=20.0 rhoWeightThreshold=20.0 rhoWeightFactor=8.0 goodnessThreshold=20.0 timeoutFactor=-1.0 timeoutRelaxMinutes=5.0 stuckTension=1.0 initialNominalSrvTime=100 inactivityMinutes=5.0 borrowFactorLimit=1.0 limitBorrowingByPackedPower=false serverStatsWaitTime=2000 nomSrvTimeHalfLife=60000 ratioHalfLife=600000 dlgDspRateHalfLife=600000 msgDspRateHalfLife=300000 initialMsgDlgRatioHalfLife=600000 initialMsgDlgRatio=6.0 msgDlgRatioBadTime=300000 highMemUtilLimit=1.0 profilerSolver=null profilerCorrelationLimit=0.95 profilerCorrelationWithYLimit=0.14 profilerCyclesBetweenSaves=15 memoryOverloadProtectionControlBroadcastPeriodSec=30 memoryOverloadProtectionControlBroadcastShortPeriodSec=15 memoryMarginRatio_fromCell=null maxNonFullGcMemoryReleaseMBOverride=-1 explicitGcPeriodSecOverride=-1 gcReleasesQuicklyOverride=null gcOptimizesThroughputOverride=null memUtilUpHalflife=1000000.0 memUtilDownHalflife=0.0 limitPower=false detectTxcViolations=false detectSvcViolations=true averagingWindowInMS=180000 intervalPerIndividualCountsInMS=10000 minStdDevRatio=0.25 maxZoneFactor=0.99 rampUpFactor=0.95 initialMaxRatePerSec=3.4028235E38 storageServiceWaitTimeInMs=5000 rampUpWithoutFeedbackInMs=180000 moc6AveragingWindowInMS=50000 moc6IntervalPerIndividualCountsInMS=1000 moc6UsePersistentStorage=true usePersistentStorage=false useSlope=true fastRampUp=true closeToMaxFraction=0.5 minSlopePointRate=5.0 minSlopePointRateDiff=5.0 concurrencyDivisor=null workProfilerServerStartupDelayMillis=61440 workProfilerMinimumCPUUtilization=0.003000000026077032 minimumCPURhoMultiplier=0.75 minimumCPURhoWeight=5.0 EnableFilters=true SipCpuOverloadProtection=true HttpAdmCtlForCpuOverloadProtection=true SipAdmCtlForCpuOverloadProtection=true AutoMemoryOverloadProtection=true MemoryMarginRatio_pvt=2.0}.
+[8/20/19 19:44:05:771 CST] 00000001 SCPComponent  I   ARFM4084I: Autonomic memory overload protection is enabled.
+[8/20/19 19:44:05:793 CST] 00000001 WsmmConfigFac I   ARFM5007I: ARFM configuration for cell yes55suse12132Cell01 is { arfmManageCpu=true arfmQueueMode=cluster ARFM.Mode=Automatic ARFM.MagicNOverride=-1 ARFM.MagicNMode=false aggregationPeriod=5.0 sec ctlCycleMinLength=59.0 sec smoothingWindow=12 maxQueueLen=1000 cpuLimit=100% cpuLimitForCappedVMs=95.0% WorkProfiler.Period=1.0 min WorkProfiler.HalfLife=10.0 min WorkProfiler.AlphaSmoothingHalfLife=10.0 min UseODRs=true WorkProfiler.UseProcessCPU=true WorkProfiler.UseOverhead=false goodnessWeightThreshold=20.0 goodnessWeightFactor=20.0 rhoWeightThreshold=20.0 rhoWeightFactor=8.0 goodnessThreshold=20.0 timeoutFactor=-1.0 timeoutRelaxMinutes=5.0 stuckTension=1.0 initialNominalSrvTime=100 inactivityMinutes=5.0 borrowFactorLimit=1.0 limitBorrowingByPackedPower=false serverStatsWaitTime=2000 nomSrvTimeHalfLife=60000 ratioHalfLife=600000 dlgDspRateHalfLife=600000 msgDspRateHalfLife=300000 initialMsgDlgRatioHalfLife=600000 initialMsgDlgRatio=6.0 msgDlgRatioBadTime=300000 highMemUtilLimit=1.0 profilerSolver=null profilerCorrelationLimit=0.95 profilerCorrelationWithYLimit=0.14 profilerCyclesBetweenSaves=15 memoryOverloadProtectionControlBroadcastPeriodSec=30 memoryOverloadProtectionControlBroadcastShortPeriodSec=15 memoryMarginRatio_fromCell=null maxNonFullGcMemoryReleaseMBOverride=-1 explicitGcPeriodSecOverride=-1 gcReleasesQuicklyOverride=null gcOptimizesThroughputOverride=null memUtilUpHalflife=1000000.0 memUtilDownHalflife=0.0 limitPower=false detectTxcViolations=false detectSvcViolations=false averagingWindowInMS=180000 intervalPerIndividualCountsInMS=10000 minStdDevRatio=0.25 maxZoneFactor=0.99 rampUpFactor=0.95 initialMaxRatePerSec=3.4028235E38 storageServiceWaitTimeInMs=5000 rampUpWithoutFeedbackInMs=180000 moc6AveragingWindowInMS=50000 moc6IntervalPerIndividualCountsInMS=1000 moc6UsePersistentStorage=true usePersistentStorage=false useSlope=true fastRampUp=true closeToMaxFraction=0.5 minSlopePointRate=5.0 minSlopePointRateDiff=5.0 concurrencyDivisor=null workProfilerServerStartupDelayMillis=61440 workProfilerMinimumCPUUtilization=0.003000000026077032 minimumCPURhoMultiplier=0.75 minimumCPURhoWeight=5.0 EnableFilters=true SipCpuOverloadProtection=true HttpAdmCtlForCpuOverloadProtection=true SipAdmCtlForCpuOverloadProtection=true AutoMemoryOverloadProtection=true MemoryMarginRatio_pvt=2.0}.
+[8/20/19 19:44:05:795 CST] 00000001 SCPComponent  I   ARFM4082I: Initialized the SIP statistics gatherer for autonomic request flow management.
+[8/20/19 19:44:05:833 CST] 00000001 TCPChannel    I   TCPC0001I: TCP Channel TCP_1 is listening on host *  (IPv6) port 9062.
+[8/20/19 19:44:05:838 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain WCInboundAdmin.
+[8/20/19 19:44:05:845 CST] 00000001 TCPChannel    I   TCPC0001I: TCP Channel TCP_2 is listening on host *  (IPv6) port 9081.
+[8/20/19 19:44:05:847 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain WCInboundDefault.
+[8/20/19 19:44:05:849 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain HttpQueueInboundDefault.
+[8/20/19 19:44:05:853 CST] 00000001 TCPChannel    I   TCPC0001I: TCP Channel TCP_4 is listening on host *  (IPv6) port 9444.
+[8/20/19 19:44:05:856 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain HttpQueueInboundDefaultSecure.
+[8/20/19 19:44:05:858 CST] 00000001 TCPChannel    I   TCPC0001I: TCP Channel TCP_3 is listening on host *  (IPv6) port 9045.
+[8/20/19 19:44:05:859 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain WCInboundAdminSecure.
+[8/20/19 19:44:05:860 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain WCInboundDefaultSecure.
+[8/20/19 19:44:05:861 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain1.
+[8/20/19 19:44:05:861 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain2.
+[8/20/19 19:44:05:863 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain3.
+[8/20/19 19:44:05:864 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain4.
+[8/20/19 19:44:05:864 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain5.
+[8/20/19 19:44:05:864 CST] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain6.
+[8/20/19 19:44:05:865 CST] 00000001 webcontainer  I com.ibm.ws.webcontainer.WSWebContainer startChains SRVE0323I: The Asynchronous Request Dispatcher is not enabled. Requests sent through either the HttpQueueInboundDefault or the HttpQueueInboundDefaultSecure chain might not be properly handled.
+[8/20/19 19:44:05:865 CST] 0000006b SchedulerServ I   SCHD0077I: The Scheduler Service is starting the Schedulers.
+[8/20/19 19:44:05:866 CST] 0000006b SchedulerServ I   SCHD0078I: The Scheduler Service has completed starting the Schedulers.
+[8/20/19 19:44:05:919 CST] 00000001 GridConfigura I   CWLRB5873I: The GridConfiguratorMBean was activated successfully.
+[8/20/19 19:44:05:931 CST] 00000001 BatchSensorCo I   CWLRB5904I: BatchSensorComponent starting...
+[8/20/19 19:44:05:951 CST] 00000001 BatchSensorCo I   CWLRB5905I: Successfully activated GridEndpointSensorMBean.
+[8/20/19 19:44:05:985 CST] 00000001 XDMessagePaci I   XJMS0008I: XD JMS batch size set to 1
+[8/20/19 19:44:05:986 CST] 00000001 JMSProxyRunti I   XJMS0004I: XD JMS message pacing controller successfully started.
+[8/20/19 19:44:05:987 CST] 00000001 JMSClassifySe I   XJMS0012I: XD JMS classification service started.
+[8/20/19 19:44:05:989 CST] 00000001 WsmmConfigFac I   ARFM5007I: ARFM configuration for cell yes55suse12132Cell01 is { arfmManageCpu=true arfmQueueMode=cluster ARFM.Mode=Automatic ARFM.MagicNOverride=-1 ARFM.MagicNMode=false aggregationPeriod=5.0 sec ctlCycleMinLength=59.0 sec smoothingWindow=12 maxQueueLen=1000 cpuLimit=100% cpuLimitForCappedVMs=95.0% WorkProfiler.Period=1.0 min WorkProfiler.HalfLife=10.0 min WorkProfiler.AlphaSmoothingHalfLife=10.0 min UseODRs=true WorkProfiler.UseProcessCPU=true WorkProfiler.UseOverhead=false goodnessWeightThreshold=20.0 goodnessWeightFactor=20.0 rhoWeightThreshold=20.0 rhoWeightFactor=8.0 goodnessThreshold=20.0 timeoutFactor=-1.0 timeoutRelaxMinutes=5.0 stuckTension=1.0 initialNominalSrvTime=100 inactivityMinutes=5.0 borrowFactorLimit=1.0 limitBorrowingByPackedPower=false serverStatsWaitTime=2000 nomSrvTimeHalfLife=60000 ratioHalfLife=600000 dlgDspRateHalfLife=600000 msgDspRateHalfLife=300000 initialMsgDlgRatioHalfLife=600000 initialMsgDlgRatio=6.0 msgDlgRatioBadTime=300000 highMemUtilLimit=1.0 profilerSolver=null profilerCorrelationLimit=0.95 profilerCorrelationWithYLimit=0.14 profilerCyclesBetweenSaves=15 memoryOverloadProtectionControlBroadcastPeriodSec=30 memoryOverloadProtectionControlBroadcastShortPeriodSec=15 memoryMarginRatio_fromCell=null maxNonFullGcMemoryReleaseMBOverride=-1 explicitGcPeriodSecOverride=-1 gcReleasesQuicklyOverride=null gcOptimizesThroughputOverride=null memUtilUpHalflife=1000000.0 memUtilDownHalflife=0.0 limitPower=false detectTxcViolations=false detectSvcViolations=true averagingWindowInMS=180000 intervalPerIndividualCountsInMS=10000 minStdDevRatio=0.25 maxZoneFactor=0.99 rampUpFactor=0.95 initialMaxRatePerSec=3.4028235E38 storageServiceWaitTimeInMs=5000 rampUpWithoutFeedbackInMs=180000 moc6AveragingWindowInMS=50000 moc6IntervalPerIndividualCountsInMS=1000 moc6UsePersistentStorage=true usePersistentStorage=false useSlope=true fastRampUp=true closeToMaxFraction=0.5 minSlopePointRate=5.0 minSlopePointRateDiff=5.0 concurrencyDivisor=null workProfilerServerStartupDelayMillis=61440 workProfilerMinimumCPUUtilization=0.003000000026077032 minimumCPURhoMultiplier=0.75 minimumCPURhoWeight=5.0 EnableFilters=true SipCpuOverloadProtection=true HttpAdmCtlForCpuOverloadProtection=true SipAdmCtlForCpuOverloadProtection=true AutoMemoryOverloadProtection=true}.
+[8/20/19 19:44:05:990 CST] 00000001 JMSWSMMServic I   XJMS0016I: XD JMS WSMM service started.
+[8/20/19 19:44:05:998 CST] 00000001 RMIConnectorC A   ADMC0026I: The RMI Connector is available at port 9811
+[8/20/19 19:44:06:003 CST] 00000001 JMXConnectors I   ADMC0058I: The JMX JSR160RMI connector is available at port 9811
+[8/20/19 19:44:06:006 CST] 00000001 FfdcProvider  W com.ibm.ws.ffdc.impl.FfdcProvider logIncident FFDC1003I: FFDC Incident emitted on /opt/IBM/WebSphere/AppServer/profiles/Custom02/logs/ffdc/omp-server133_113bf911_19.08.20_19.44.06.0056393287886228500298.txt com.ibm.ws.eba.odc.EBATreeBuilder.setInitialized 204
+[8/20/19 19:44:06:007 CST] 0000006e UserManagemen I   CWWIM6002I Received notification that the server has finished starting.
+[8/20/19 19:44:06:027 CST] 00000057 NGUtil$Server I   ASND0002I: Detected server omp-server133 started on node Custom02133
+[8/20/19 19:44:06:045 CST] 00000001 XDWsGroupMana I   ODCF8010I: Peer layer setting up.
+[8/20/19 19:44:06:056 CST] 00000001 P2PGroup      I   ODCF8020I: Peer layer starting; process=yes55suse12132Cell01\Custom02133\omp-server133; boot host=[yes55suse12132:11005, yes55suse12133:11003, yes55suse12132:11003].
+[8/20/19 19:44:06:064 CST] 00000001 SonP2PShimImp I   ODCF8030I: Peer layer started; process=yes55suse12132Cell01\Custom02133\omp-server133.
+[8/20/19 19:44:06:070 CST] 00000088 P2PGroup      I   ODCF8040I: Detected process yes55suse12132Cell01\Custom01132\nodeagent started.
+[8/20/19 19:44:06:071 CST] 00000088 P2PGroup      I   ODCF8040I: Detected process yes55suse12132Cell01\dmgr\dmgr started.
+[8/20/19 19:44:06:072 CST] 00000088 P2PGroup      I   ODCF8040I: Detected process yes55suse12132Cell01\Custom01132\omp-server132 started.
+[8/20/19 19:44:06:072 CST] 00000088 P2PGroup      I   ODCF8040I: Detected process yes55suse12132Cell01\Custom02133\nodeagent started.
+[8/20/19 19:44:06:867 CST] 00000001 WsServerImpl  A   WSVR0002I: Server omp-server133 open for e-business, problems occurred during startup
+[8/20/19 19:44:07:112 CST] 0000008d WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain IPCCOutboundChain.
+[8/20/19 19:44:07:214 CST] 00000091 DiscoveryMBea I   ADMD0023I: The system discovered process (name: nodeagent, type: NodeAgent, pid: 28627)

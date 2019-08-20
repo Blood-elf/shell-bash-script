@@ -1,0 +1,10 @@
+2019年08月20日 15:46:41  : clean old file success !
+2019年08月20日 15:47:06  : copy src code successful !
+2019年08月20日 15:47:06 处理完冲突包,和补充完 jar 包;
+2019年08月20日 15:47:06  : copy config file bak
+2019年08月20日 15:47:07  : replace config file success !
+2019年08月20日 15:54:06  : clean old file success !
+2019年08月20日 15:54:16  : copy src code successful !
+2019年08月20日 15:54:16 处理完冲突包,和补充完 jar 包;
+2019年08月20日 15:54:16  : copy config file bak
+2019年08月20日 15:54:17  : replace config file success !

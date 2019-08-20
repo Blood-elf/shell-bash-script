@@ -1,0 +1,10 @@
+ft deploy path :
+/opt/IBM/WebSphere/AppServer/profiles/Custom01/installedApps/yes53suse12056Cell01/omp_war.ear/omp.war
+uat deploy-132 path :
+/opt/IBM/WebSphere/AppServer/profiles/Custom01/installedApps/yes55suse12132Cell01/omp_war.ear/omp.war
+uat deploy-133 path :
+/opt/IBM/WebSphere/AppServer/profiles/Custom02/installedApps/yes55suse12132Cell01/omp_war.ear/omp.war
+/opt/IBM/WebSphere/AppServer/profiles/Custom02/installedApps/yes55suse12132Cell01/omp_133_war.ear/omp.war
+
+
+

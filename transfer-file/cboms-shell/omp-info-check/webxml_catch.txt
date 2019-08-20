@@ -1,0 +1,8 @@
+ft-56 web.xml cache path :
+/opt/IBM/WebSphere/AppServer/profiles/Custom01/config/cells/yes53suse12056Cell01/applications/omp_war.ear/deployments/omp_war/omp.war/WEB-INF
+
+uat-132 web.xml cache path :
+/opt/IBM/WebSphere/AppServer/profiles/Custom01/config/cells/yes55suse12132Cell01/applications/omp_war.ear/deployments/omp_war/omp.war/WEB-INF
+
+uat-133 web.xml cache path :
+opt/IBM/WebSphere/AppServer/profiles/Custom02/config/cells/yes55suse12132Cell01/applications/omp_war.ear/deployments/omp_war/omp.war/WEB-INF

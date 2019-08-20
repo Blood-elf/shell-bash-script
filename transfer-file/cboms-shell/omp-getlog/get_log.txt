@@ -1,0 +1,5 @@
+boot script !
+exec init_param
+exec create_folder
+exec download_file1 : 
+exec download_file2 : 

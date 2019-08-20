@@ -1,0 +1,4 @@
+ft database :
+66.3.58.138:1521:omp omp/omp
+uat database :
+66.6.55.134:1521/omp sys/oracle omp/omp

@@ -1,0 +1,7 @@
+uat-132
+	 /opt/IBM/WebSphere/AppServer/profiles/Custom01/installedApps/yes55suse12132Cell01/omp_war.ear/omp.war/WEB-INF/lib
+
+uat-133
+	/opt/IBM/WebSphere/AppServer/profiles/Custom02/installedApps/yes55suse12132Cell01/omp_war.ear/omp.war/WEB-INF/lib
+	*
+	/opt/IBM/WebSphere/AppServer/profiles/Custom02/installedApps/yes55suse12132Cell01/omp_133_war.ear/omp.war/WEB-INF/lib

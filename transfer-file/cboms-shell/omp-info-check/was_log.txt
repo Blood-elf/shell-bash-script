@@ -1,0 +1,8 @@
+ft log path :
+/opt/IBM/WebSphere/AppServer/profiles/Custom01/logs/OMPSERVER
+
+uat-132 log path :
+/opt/IBM/WebSphere/AppServer/profiles/Custom01/logs/omp-server132
+
+uat-133 log path :
+/opt/IBM/WebSphere/AppServer/profiles/Custom02/logs/omp-server133
